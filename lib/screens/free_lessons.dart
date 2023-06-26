@@ -103,32 +103,13 @@ class _FreeLessonsScreenState extends State<FreeLessonsScreen> {
           //               ),
           //             ),
 
+
+
+
+          // hms7ha b3den
           Expanded(
-            child: FutureBuilder(
-                future: fetchAllCategories(),
-                builder: (ctx, AsyncSnapshot<List<CoursesCategory>> snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    if (snapshot.hasError) {
-                      return SizedBox(
-                          // height: MediaQuery.of(context).size.height - 179,
-                          child: Center(
-                        child: Text(
-                          '${snapshot.error} occured',
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                      ));
-                    } else if (snapshot.hasData) {
-                      return MediaQuery.removePadding(
-                        context: context,
-                        removeTop: true,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: count,
-                          itemBuilder: (context, index) {
-                            CoursesCategory category =
-                                (snapshot.data as List)[index];
-                            return Container(
+         
+            child: Container(
                               margin: const EdgeInsets.only(bottom: 2),
                               child: InkWell(
                                 child: SizedBox(
@@ -138,10 +119,10 @@ class _FreeLessonsScreenState extends State<FreeLessonsScreen> {
                                       Positioned.fill(
                                         child: Container(
                                           padding: const EdgeInsets.all(10.0),
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             image: DecorationImage(
-                                              image: NetworkImage(
-                                                  category.imageFullPath),
+                                              image: AssetImage(
+                                                  'assets/images/welcomePage.png'),
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -159,10 +140,10 @@ class _FreeLessonsScreenState extends State<FreeLessonsScreen> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: [
-                                                FittedBox(
+                                                const FittedBox(
                                                   fit: BoxFit.scaleDown,
-                                                  child: Text(category.name,
-                                                      style: const TextStyle(
+                                                  child: Text('sssss',
+                                                      style: TextStyle(
                                                           fontSize: 25,
                                                           color: Colors.white,
                                                           fontWeight:
@@ -180,25 +161,110 @@ class _FreeLessonsScreenState extends State<FreeLessonsScreen> {
                                 onTap: () => {
                                   Navigator.of(context).push(CustomPageRoute(
                                       child: CoursesListingScreen(
-                                    categoryId: category.id,
+                                    categoryId: 1,
                                   )))
                                 },
                               ),
-                            );
-                          },
-                        ),
-                      );
-                    } else {
-                      return Container();
-                    }
-                  } else if (snapshot.connectionState ==
-                      ConnectionState.waiting) {
-                    return const Loading();
-                  } else {
-                    return Container();
-                  }
-                }),
+                            ),
           ),
+
+          //els7 
+          // Expanded(
+          //   child: FutureBuilder(
+          //       future: fetchAllCategories(),
+          //       builder: (ctx, AsyncSnapshot<List<CoursesCategory>> snapshot) {
+          //         if (snapshot.connectionState == ConnectionState.done) {
+          //           if (snapshot.hasError) {
+          //             return SizedBox(
+          //                 // height: MediaQuery.of(context).size.height - 179,
+          //                 child: Center(
+          //               child: Text(
+          //                 '${snapshot.error} occured',
+          //                 textAlign: TextAlign.center,
+          //                 style: const TextStyle(fontSize: 18),
+          //               ),
+          //             ));
+          //           } else if (snapshot.hasData) {
+          //             return MediaQuery.removePadding(
+          //               context: context,
+          //               removeTop: true,
+          //               child: ListView.builder(
+          //                 shrinkWrap: true,
+          //                 itemCount: count,
+          //                 itemBuilder: (context, index) {
+          //                   CoursesCategory category =
+          //                       (snapshot.data as List)[index];
+          //                   return Container(
+          //                     margin: const EdgeInsets.only(bottom: 2),
+          //                     child: InkWell(
+          //                       child: SizedBox(
+          //                         height: 155,
+          //                         child: Stack(
+          //                           children: [
+          //                             Positioned.fill(
+          //                               child: Container(
+          //                                 padding: const EdgeInsets.all(10.0),
+          //                                 decoration: BoxDecoration(
+          //                                   image: DecorationImage(
+          //                                     image: NetworkImage(
+          //                                         category.imageFullPath),
+          //                                     fit: BoxFit.cover,
+          //                                   ),
+          //                                 ),
+          //                               ),
+          //                             ),
+          //                             Positioned.fill(
+          //                               child: Container(
+          //                                   padding: const EdgeInsets.all(15.0),
+          //                                   decoration: const BoxDecoration(
+          //                                       color: Color.fromRGBO(
+          //                                           0, 0, 0, .5)),
+          //                                   child: Column(
+          //                                     mainAxisAlignment:
+          //                                         MainAxisAlignment.center,
+          //                                     crossAxisAlignment:
+          //                                         CrossAxisAlignment.center,
+          //                                     children: [
+          //                                       FittedBox(
+          //                                         fit: BoxFit.scaleDown,
+          //                                         child: Text(category.name,
+          //                                             style: const TextStyle(
+          //                                                 fontSize: 25,
+          //                                                 color: Colors.white,
+          //                                                 fontWeight:
+          //                                                     FontWeight.bold,
+          //                                                 decoration:
+          //                                                     TextDecoration
+          //                                                         .none)),
+          //                                       ),
+          //                                     ],
+          //                                   )),
+          //                             ),
+          //                           ],
+          //                         ),
+          //                       ),
+          //                       onTap: () => {
+          //                         Navigator.of(context).push(CustomPageRoute(
+          //                             child: CoursesListingScreen(
+          //                           categoryId: category.id,
+          //                         )))
+          //                       },
+          //                     ),
+          //                   );
+          //                 },
+          //               ),
+          //             );
+          //           } else {
+          //             return Container();
+          //           }
+          //         } else if (snapshot.connectionState ==
+          //             ConnectionState.waiting) {
+          //           return const Loading();
+          //         } else {
+          //           return Container();
+          //         }
+          //       }),
+          // ),
         ],
       ),
     );

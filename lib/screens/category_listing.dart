@@ -29,10 +29,10 @@ class _CategoryListingScreenState extends State<CategoryListingScreen>
         children: [
           Container(
             decoration:
-                const BoxDecoration(color: Color.fromRGBO(255, 18, 101, 1)),
+                const BoxDecoration(color: Color.fromRGBO(0, 80, 92, 1)),
             child: Padding(
               padding: const EdgeInsets.only(
-                  bottom: 20, top: 60, left: 20, right: 40),
+                  bottom: 20, top: 60, left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,7 +76,6 @@ class _CategoryListingScreenState extends State<CategoryListingScreen>
               ],
             ),
           ),
-          // tab bar view here
           Expanded(
             child: TabBarView(
                 controller: _tabController,
@@ -85,15 +84,7 @@ class _CategoryListingScreenState extends State<CategoryListingScreen>
         ],
       ),
 
-      // body: const TabBarView(
-      //   physics: NeverScrollableScrollPhysics(),
-      //   children: [FreeLessonsScreen(), PremiumLessonsScreen()],
-      // ),
     );
   }
 
-  loginOrNot() async {
-    // SharedPreferences prefs = await SharedPreferences.getInstance();
-    // bool? login = prefs.getBool('');
-  }
 }

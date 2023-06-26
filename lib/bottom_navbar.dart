@@ -3,6 +3,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:banktime/screens/auth_screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -64,7 +65,7 @@ class _NavState extends State<Nav> {
   @override
   void initState() {
     super.initState();
-    fetchDogs();
+    // fetchDogs();
     pageIndex = widget.pageIndex;
     currentTab = HomeTab.values[pageIndex];
     player = AudioPlayer();
@@ -129,7 +130,7 @@ class _NavState extends State<Nav> {
                   width: 92,
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color.fromRGBO(255, 18, 101, 1),
+                      color: Color.fromRGBO(19, 140, 237, 1),
                       image: DecorationImage(
                         image: AssetImage('assets/images/handPointer.png'),
                       )),
@@ -164,7 +165,7 @@ class _NavState extends State<Nav> {
     return Container(
       height: 50,
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(255, 18, 101, 1),
+        color: Color.fromRGBO(19, 140, 237, 1),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -451,7 +452,8 @@ abstract class TabNavigatorRouteFactory {
       const ChatWithUsScreen(closIcon: false);
 
   static Widget _profileScreenBuilder(BuildContext context) =>
-      const DogsProfileScreen();
+      // const DogsProfileScreen();
+      const LoginScreen();
 
   static Widget _storeScreenBuilder(BuildContext context) =>
       const WebViewScreen();

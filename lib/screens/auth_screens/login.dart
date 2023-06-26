@@ -289,43 +289,41 @@ class _LoginScreenState extends State<LoginScreen> {
 
   login() async {
     try {
-      if (loginFormKey.currentState!.validate()) {
-        var jsonResponse;
-        setState(() => loading = true);
-        // hms7haaaaaaa
-        Navigator.of(context).pushAndRemoveUntil(
-                      CustomPageRoute(
-                          child: const Nav(
-                        pageIndex: 0,
-                      )),
-                      (_) => false);
-        // 
+      Navigator.of(context).pushAndRemoveUntil(
+                    CustomPageRoute(
+                        child: const Nav(
+                      pageIndex: 0,
+                    )),
+                    (_) => false);
+      // if (loginFormKey.currentState!.validate()) {
+      //   var jsonResponse;
+      //   setState(() => loading = true);
 
-        Response response = await Shared(context).postLogin("users/login",
-            jsonEncode({'email': email.text, 'password': password.text}));
+      //   Response response = await Shared(context).postLogin("users/login",
+      //       jsonEncode({'email': email.text, 'password': password.text}));
 
-        if (response.statusCode == 200) {
-          jsonResponse = jsonDecode(response.body);
-          SharedPreferences prefs = await SharedPreferences.getInstance();
-          Navigator.of(context).pushAndRemoveUntil(
-              CustomPageRoute(
-                  child: const Nav(
-                pageIndex: 0,
-              )),
-              (_) => false);
-        } else {
-          Fluttertoast.showToast(
-              msg: "Invalid Email or Password.",
-              toastLength: Toast.LENGTH_LONG,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0);
+      //   if (response.statusCode == 200) {
+      //     jsonResponse = jsonDecode(response.body);
+      //     SharedPreferences prefs = await SharedPreferences.getInstance();
+      //     Navigator.of(context).pushAndRemoveUntil(
+      //         CustomPageRoute(
+      //             child: const Nav(
+      //           pageIndex: 0,
+      //         )),
+      //         (_) => false);
+      //   } else {
+      //     Fluttertoast.showToast(
+      //         msg: "Invalid Email or Password.",
+      //         toastLength: Toast.LENGTH_LONG,
+      //         gravity: ToastGravity.BOTTOM,
+      //         timeInSecForIosWeb: 1,
+      //         backgroundColor: Colors.red,
+      //         textColor: Colors.white,
+      //         fontSize: 16.0);
 
-          setState(() => loading = false);
-        }
-      }
+      //     setState(() => loading = false);
+      //   }
+      // }
     } catch (e) {
       Fluttertoast.showToast(
           msg: "Invalid Email or Password",

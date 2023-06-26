@@ -118,7 +118,7 @@ class _DogsProfileScreenState extends State<DogsProfileScreen> {
                                               child:
                                                   DropdownButtonHideUnderline(
                                                 child: DropdownButton2<Dog>(
-                                                  value: dogSelected!,
+                                                  value: dogSelected,
                                                   customButton: Row(
                                                     children: [
                                                       Expanded(
