@@ -24,7 +24,7 @@ class _ChatWithUsScreenState extends State<ChatWithUsScreen> {
           children: [
             Container(
               decoration:
-                  const BoxDecoration(color: Color.fromRGBO(19, 140, 237, 1)),
+                  const BoxDecoration(color: Color.fromRGBO(255, 18, 101, 1)),
               child: Padding(
                 padding: const EdgeInsets.only(
                     bottom: 20, top: 60, left: 20, right: 40),
@@ -164,8 +164,8 @@ class _ChatWithUsScreenState extends State<ChatWithUsScreen> {
                                                   fontWeight: FontWeight.bold)),
                                           onPressed: () {},
                                           style: ElevatedButton.styleFrom(
-                                            primary:
-                                                Color.fromRGBO(19, 140, 237, 1),
+                                            backgroundColor: Color.fromRGBO(
+                                                255, 18, 101, 114),
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(20),
@@ -199,7 +199,7 @@ class _ChatWithUsScreenState extends State<ChatWithUsScreen> {
                                                   fontWeight: FontWeight.bold)),
                                           onPressed: () {},
                                           style: ElevatedButton.styleFrom(
-                                            primary: Colors.black,
+                                            backgroundColor: Colors.black,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(20),

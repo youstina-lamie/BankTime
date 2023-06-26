@@ -129,7 +129,7 @@ class _NavState extends State<Nav> {
                   width: 92,
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color.fromRGBO(19, 140, 237, 1),
+                      color: Color.fromRGBO(255, 18, 101, 1),
                       image: DecorationImage(
                         image: AssetImage('assets/images/handPointer.png'),
                       )),
@@ -164,7 +164,7 @@ class _NavState extends State<Nav> {
     return Container(
       height: 50,
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(19, 140, 237, 1),
+        color: Color.fromRGBO(255, 18, 101, 1),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -76,7 +76,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                   children: [
                     Container(
                       decoration: const BoxDecoration(
-                          color: Color.fromRGBO(19, 140, 237, 1)),
+                          color: Color.fromRGBO(255, 18, 101, 1)),
                       child: InkWell(
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -129,7 +129,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(60),
                                     color:
-                                        const Color.fromRGBO(19, 140, 237, 1),
+                                        const Color.fromRGBO(255, 18, 101, 1),
                                   ),
                                   child: image != null
                                       ? ClipRRect(
@@ -230,11 +230,11 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintStyle: const TextStyle(
@@ -278,7 +278,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                 dropdownColor: Colors.white,
                                 icon: const Icon(
                                   Icons.keyboard_arrow_down,
-                                  color: Color.fromRGBO(19, 140, 237, 1),
+                                  color: Color.fromRGBO(255, 18, 101, 1),
                                 ),
                                 onTap: () => FocusScope.of(context).unfocus(),
                                 style: const TextStyle(
@@ -300,11 +300,11 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintText: 'select breed',
@@ -376,11 +376,11 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintText: 'Select Birth',
@@ -421,7 +421,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                               width: 245,
                               height: 42,
                               decoration: BoxDecoration(
-                                color: const Color.fromRGBO(19, 140, 237, 1),
+                                color: const Color.fromRGBO(255, 18, 101, 1),
                                 borderRadius: BorderRadius.circular(21),
                               ),
                               child: Row(
@@ -515,8 +515,8 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   updateDog();
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary:
-                                      const Color.fromRGBO(19, 140, 237, 1),
+                                  backgroundColor:
+                                      const Color.fromRGBO(255, 18, 101, 1),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(21),
                                   ),
@@ -531,7 +531,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                 'Remove Dog',
                                 style: TextStyle(
                                     fontSize: 14,
-                                    color: Color.fromRGBO(19, 140, 237, 1)),
+                                    color: Color.fromRGBO(255, 18, 101, 1)),
                               ),
                               onTap: () {
                                 showDialog<String>(

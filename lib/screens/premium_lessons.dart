@@ -126,7 +126,7 @@ class _PremiumLessonsScreenState extends State<PremiumLessonsScreen> {
                                 child: const Text(
                                   'Masterclasses',
                                   style: TextStyle(
-                                      color: Color.fromRGBO(19, 140, 237, 1),
+                                      color: Color.fromRGBO(255, 18, 101, 1),
                                       fontSize: 16,
                                       fontWeight: FontWeight.w700),
                                   textAlign: TextAlign.left,

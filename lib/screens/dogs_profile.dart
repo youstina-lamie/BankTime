@@ -96,8 +96,8 @@ class _DogsProfileScreenState extends State<DogsProfileScreen> {
                                   children: [
                                     Container(
                                       decoration: const BoxDecoration(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1)),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114)),
                                       child: Padding(
                                         padding: const EdgeInsets.only(
                                             left: 20,
@@ -473,8 +473,6 @@ class _DogsProfileScreenState extends State<DogsProfileScreen> {
                                               //     loading = false;
                                               //   });
                                               // }
-
-                                              print('switched to: $i , $index');
                                             },
                                           ),
                                         ],
@@ -750,8 +748,9 @@ class _DogsProfileScreenState extends State<DogsProfileScreen> {
                                                               const AddDogProfileScreen()));
                                                 },
                                                 style: ElevatedButton.styleFrom(
-                                                  primary: const Color.fromRGBO(
-                                                      19, 140, 237, 1),
+                                                  backgroundColor:
+                                                      const Color.fromRGBO(
+                                                          19, 140, 237, 1),
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(

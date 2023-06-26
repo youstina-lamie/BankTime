@@ -35,7 +35,8 @@ class _CustomButtonState extends State<CustomButton> {
           ),
           onPressed: widget.onTap,
           style: ElevatedButton.styleFrom(
-            primary: widget.buttonColor ?? const Color.fromRGBO(19, 140, 237, 1),
+            backgroundColor:
+                widget.buttonColor ?? const Color.fromRGBO(255, 18, 101, 1),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(28),
             ),

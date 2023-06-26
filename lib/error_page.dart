@@ -50,7 +50,7 @@ class ConnectionLostScreen extends StatelessWidget {
                         (_) => false);
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromRGBO(255, 202, 0, 1),
+                    backgroundColor: const Color.fromRGBO(153, 206, 103, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),

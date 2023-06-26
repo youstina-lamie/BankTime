@@ -1,26 +1,18 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, avoid_print, null_check_always_fails, sized_box_for_whitespace, prefer_const_constructors, unused_local_variable
 
 import 'dart:convert';
-import 'dart:io';
-//import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:banktime/custom_page_route.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-//import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:banktime/loading.dart';
 import 'package:banktime/model/dog.dart';
 import 'package:banktime/screens/auth_screens/register.dart';
 import 'package:banktime/screens/auth_screens/reset_password.dart';
 import 'package:banktime/screens/questions_screens/clicker_intro.dart';
-//import 'package:google_sign_in/google_sign_in.dart';
 import '../../bottom_navbar.dart';
 import '../../shared.dart';
 
@@ -38,13 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  final FacebookAuth _facebookLogin = FacebookAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: [
-      'email',
-      // 'https://www.googleapis.com/auth/contacts.readonly',
-    ],
-  );
+
   @override
   void initState() {
     super.initState();
@@ -64,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Container(
                         decoration: const BoxDecoration(
-                            color: Color.fromRGBO(19, 140, 237, 1)),
+                            color: Color.fromRGBO(0, 80, 92, 1)),
                         child: InkWell(
                           child: Padding(
                             padding: const EdgeInsets.only(
@@ -96,11 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       Container(
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage(
-                                    'assets/images/Artboard – 1.png'))),
+                        color: const Color.fromRGBO(247, 247, 247, 1),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 40),
                           child: Column(children: [
@@ -137,10 +119,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: BorderSide(
                                           color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                              Color.fromRGBO(12, 162, 185, 1))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(12, 162, 185, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintText: 'Your Email',
@@ -191,11 +173,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                         borderRadius: BorderRadius.circular(6),
                                         borderSide: BorderSide(
                                             color: Color.fromRGBO(
-                                                19, 140, 237, 1))),
+                                                12, 162, 185, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
                                           color:
-                                              Color.fromRGBO(19, 140, 237, 1)),
+                                              Color.fromRGBO(12, 162, 185, 1)),
                                       borderRadius: BorderRadius.circular(6),
                                     ),
                                     hintText: 'Password',
@@ -233,8 +215,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   login();
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary:
-                                      const Color.fromRGBO(19, 140, 237, 1),
+                                  backgroundColor:
+                                      const Color.fromRGBO(153, 206, 103, 1),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(28),
                                   ),
@@ -265,182 +247,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             SizedBox(
                               height: 53,
                             ),
-                            const Text('or Login With',
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.bold)),
                             SizedBox(
-                              height: 29,
-                            ),
-                            Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 56,
-                              child: OutlinedButton.icon(
-                                style: OutlinedButton.styleFrom(
-                                  backgroundColor:
-                                      const Color.fromRGBO(54, 127, 192, 1),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(28),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  loginWithFaceBook();
-                                },
-                                icon: const FaIcon(
-                                  FontAwesomeIcons.facebookF,
-                                  size: 18,
-                                  color: Colors.white,
-                                ),
-                                label: const Text(
-                                  "Login with Facebook",
-                                  style: TextStyle(
-                                      fontSize: 18, color: Colors.white),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 28,
-                            ),
-                            Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 56,
-                              child: OutlinedButton.icon(
-                                style: OutlinedButton.styleFrom(
-                                  backgroundColor:
-                                      const Color.fromRGBO(221, 75, 57, 1),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(28),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  loginWithGoogle();
-                                },
-                                icon: const FaIcon(
-                                  FontAwesomeIcons.googlePlusG,
-                                  size: 18,
-                                  color: Colors.white,
-                                ),
-                                label: const Text(
-                                  "Login with Google",
-                                  style: TextStyle(
-                                      fontSize: 18, color: Colors.white),
-                                ),
-                              ),
-                            ),
-                            Platform.isIOS
-                                ? SizedBox(
-                                    height: 28,
-                                  )
-                                : Container(),
-                            Platform.isIOS
-                                ? Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    height: 56,
-                                    child: SignInWithAppleButton(
-                                      onPressed: () async {
-                                        final credential = await SignInWithApple
-                                            .getAppleIDCredential(
-                                          scopes: [
-                                            AppleIDAuthorizationScopes.email,
-                                            AppleIDAuthorizationScopes.fullName,
-                                          ],
-                                        ).then((credential) async {
-                                          setState(() {
-                                            loading = true;
-                                          });
-                                          // var googleUser = _googleSignIn.currentUser;
-                                          Response response =
-                                              await Shared(context).postLogin(
-                                                  "users/social-login",
-                                                  jsonEncode({
-                                                    'email': credential.email,
-                                                    'name':
-                                                        credential.givenName,
-                                                    'provider_name': 'Apple'
-                                                  }));
-                                          var jsonResponse =
-                                              json.decode(response.body);
-                                          if (response.statusCode == 200) {
-                                            if (jsonResponse['user'] != null) {
-                                              SharedPreferences prefs =
-                                                  await SharedPreferences
-                                                      .getInstance();
-                                              prefs.setBool('guest', false);
-                                              prefs.setInt('userId',
-                                                  jsonResponse['user']['id']);
-
-                                              dogs = prefs.getString('dogs') ==
-                                                      null
-                                                  ? ''
-                                                  : prefs.getString('dogs')!;
-
-                                              if (dogs != '') {
-                                                var jsonDog = json.decode(dogs);
-                                                Dog dog =
-                                                    Dog.fromJson(jsonDog[0]);
-
-                                                Response responseAddDog =
-                                                    await Shared(context)
-                                                        .post("dogs/new", {
-                                                  'name': dog.name,
-                                                  'breed': (dog.breed!.id)
-                                                      .toString(),
-                                                  'gender': (dog.gender!.id)
-                                                      .toString(),
-                                                  'date_of_birth':
-                                                      dog.birthDate.toString(),
-                                                  'user_id':
-                                                      (jsonResponse['user']
-                                                              ['id'])
-                                                          .toString()
-                                                });
-                                                prefs.remove('dogs');
-                                              }
-
-                                              visited =
-                                                  prefs.getBool('visited') ==
-                                                          null
-                                                      ? false
-                                                      : true;
-                                              visited
-                                                  ? Navigator.of(context)
-                                                      .pushAndRemoveUntil(
-                                                          CustomPageRoute(
-                                                              child: const Nav(
-                                                            pageIndex: 0,
-                                                          )),
-                                                          (_) => false)
-                                                  : Navigator.of(context,
-                                                          rootNavigator: true)
-                                                      .pushAndRemoveUntil(
-                                                          CustomPageRoute(
-                                                              child:
-                                                                  const ClickerIntro()),
-                                                          (_) => false);
-                                            } else {
-                                              setState(() => loading = false);
-                                              Fluttertoast.showToast(
-                                                  msg: jsonResponse['error'],
-                                                  toastLength:
-                                                      Toast.LENGTH_LONG,
-                                                  gravity: ToastGravity.BOTTOM,
-                                                  timeInSecForIosWeb: 1,
-                                                  backgroundColor: Colors.red,
-                                                  textColor: Colors.white,
-                                                  fontSize: 16.0);
-                                            }
-                                          } else {}
-                                        });
-
-                                        print(credential);
-
-                                        // Now send the credential (especially `credential.authorizationCode`) to your server to create a session
-                                        // after they have been validated with Apple (see `Integration` section for more information on how to do this)
-                                      },
-                                    ),
-                                  )
-                                : SizedBox.shrink(),
-                            SizedBox(
-                              height: 85,
+                              height: 100,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -454,7 +262,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         text: 'Sign Up',
                                         style: const TextStyle(
                                             color:
-                                                Color.fromRGBO(19, 140, 237, 1),
+                                                Color.fromRGBO(12, 162, 185, 1),
                                             fontSize: 14),
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () {
@@ -469,7 +277,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             ),
                             SizedBox(
-                              height: 44,
+                              height: 100,
                             )
                           ]),
                         ),
@@ -484,6 +292,14 @@ class _LoginScreenState extends State<LoginScreen> {
       if (loginFormKey.currentState!.validate()) {
         var jsonResponse;
         setState(() => loading = true);
+        // hms7haaaaaaa
+        Navigator.of(context).pushAndRemoveUntil(
+                      CustomPageRoute(
+                          child: const Nav(
+                        pageIndex: 0,
+                      )),
+                      (_) => false);
+        // 
 
         Response response = await Shared(context).postLogin("users/login",
             jsonEncode({'email': email.text, 'password': password.text}));
@@ -491,36 +307,12 @@ class _LoginScreenState extends State<LoginScreen> {
         if (response.statusCode == 200) {
           jsonResponse = jsonDecode(response.body);
           SharedPreferences prefs = await SharedPreferences.getInstance();
-          prefs.setBool('guest', false);
-          prefs.setInt('userId', jsonResponse['user']['id']);
-
-          dogs =
-              prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
-
-          if (dogs != '') {
-            var jsonDog = json.decode(dogs);
-            Dog dog = Dog.fromJson(jsonDog[0]);
-
-            Response responseAddDog = await Shared(context).post("dogs/new", {
-              'name': dog.name,
-              'breed': (dog.breed!.id).toString(),
-              'gender': (dog.gender!.id).toString(),
-              'date_of_birth': dog.birthDate.toString(),
-              'user_id': (jsonResponse['user']['id']).toString()
-            });
-            prefs.remove('dogs');
-          }
-
-          visited = prefs.getBool('visited') == null ? false : true;
-          visited
-              ? Navigator.of(context).pushAndRemoveUntil(
-                  CustomPageRoute(
-                      child: const Nav(
-                    pageIndex: 0,
-                  )),
-                  (_) => false)
-              : Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
-                  CustomPageRoute(child: const ClickerIntro()), (_) => false);
+          Navigator.of(context).pushAndRemoveUntil(
+              CustomPageRoute(
+                  child: const Nav(
+                pageIndex: 0,
+              )),
+              (_) => false);
         } else {
           Fluttertoast.showToast(
               msg: "Invalid Email or Password.",
@@ -544,158 +336,5 @@ class _LoginScreenState extends State<LoginScreen> {
           textColor: Colors.white,
           fontSize: 16.0);
     }
-  }
-
-  Future<LoginResult> _handleSignInFacebook() async {
-    try {
-      _facebookLogin.logOut();
-
-      final result = _facebookLogin.login();
-      return result;
-    } catch (error) {
-      print(error);
-      return null!;
-    }
-  }
-
-  loginWithFaceBook() {
-    setState(() {
-      loading = true;
-    });
-    _handleSignInFacebook().then((result) async {
-      switch (result.status) {
-        case LoginStatus.success:
-          final userData = await FacebookAuth.instance.getUserData();
-          Response response = await Shared(context).postLogin(
-              "users/social-login",
-              jsonEncode({
-                'email': userData['email'],
-                'name': userData['name'],
-                'provider_name': 'Facebook'
-              }));
-          var jsonResponse = json.decode(response.body);
-          if (response.statusCode == 200) {
-            if (jsonResponse['user'] != null) {
-              SharedPreferences prefs = await SharedPreferences.getInstance();
-
-              prefs.setBool('guest', false);
-              prefs.setInt('userId', jsonResponse['user']['id']);
-              dogs = prefs.getString('dogs') == null
-                  ? ''
-                  : prefs.getString('dogs')!;
-              if (dogs != '') {
-                var jsonDog = json.decode(dogs);
-                Dog dog = Dog.fromJson(jsonDog[0]);
-                Response responseAddDog =
-                    await Shared(context).post("dogs/new", {
-                  'name': dog.name,
-                  'breed': (dog.breed!.id).toString(),
-                  'gender': (dog.gender!.id).toString(),
-                  'date_of_birth': dog.birthDate.toString(),
-                  'user_id': (jsonResponse['user']['id']).toString()
-                });
-                prefs.remove('dogs');
-              }
-              visited = prefs.getBool('visited') == null ? false : true;
-              visited
-                  ? Navigator.of(context).pushAndRemoveUntil(
-                      CustomPageRoute(
-                          child: const Nav(
-                        pageIndex: 0,
-                      )),
-                      (_) => false)
-                  : Navigator.of(context, rootNavigator: true)
-                      .pushAndRemoveUntil(
-                          CustomPageRoute(child: const ClickerIntro()),
-                          (_) => false);
-            } else {
-              setState(() => loading = false);
-              Fluttertoast.showToast(
-                  msg: jsonResponse['error'],
-                  toastLength: Toast.LENGTH_LONG,
-                  gravity: ToastGravity.BOTTOM,
-                  timeInSecForIosWeb: 1,
-                  backgroundColor: Colors.red,
-                  textColor: Colors.white,
-                  fontSize: 16.0);
-            }
-          } else {}
-
-          break;
-        case LoginStatus.cancelled:
-          print(result.status);
-          break;
-        case LoginStatus.failed:
-          print("result.errorMessage${result.message}");
-          break;
-        case LoginStatus.operationInProgress:
-          print(result.status);
-          break;
-      }
-    });
-  }
-
-  Future<GoogleSignInAuthentication> _handleSignInGoogle() async {
-    {
-      await _googleSignIn.signIn();
-      return await _googleSignIn.currentUser!.authentication;
-    }
-  }
-
-  loginWithGoogle() {
-    _handleSignInGoogle().then((auth) async {
-      setState(() => loading = false);
-      var googleUser = _googleSignIn.currentUser;
-      Response response = await Shared(context).postLogin(
-          "users/social-login",
-          jsonEncode({
-            'email': googleUser!.email,
-            'name': googleUser.displayName,
-            'provider_name': 'Google'
-          }));
-      var jsonResponse = json.decode(response.body);
-      if (response.statusCode == 200) {
-        if (jsonResponse['user'] != null) {
-          SharedPreferences prefs = await SharedPreferences.getInstance();
-          prefs.setBool('guest', false);
-          prefs.setInt('userId', jsonResponse['user']['id']);
-          dogs =
-              prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
-          if (dogs != '') {
-            var jsonDog = json.decode(dogs);
-            Dog dog = Dog.fromJson(jsonDog[0]);
-            Response responseAddDog = await Shared(context).post("dogs/new", {
-              'name': dog.name,
-              'breed': (dog.breed!.id).toString(),
-              'gender': (dog.gender!.id).toString(),
-              'date_of_birth': dog.birthDate.toString(),
-              'user_id': (jsonResponse['user']['id']).toString()
-            });
-            prefs.remove('dogs');
-          }
-
-          visited = prefs.getBool('visited') == null ? false : true;
-          visited
-              ? Navigator.of(context).pushAndRemoveUntil(
-                  CustomPageRoute(
-                      child: const Nav(
-                    pageIndex: 0,
-                  )),
-                  (_) => false)
-              : Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
-                  CustomPageRoute(child: const ClickerIntro()), (_) => false);
-        } else {
-          setState(() => loading = false);
-          Fluttertoast.showToast(
-              msg: jsonResponse['error'],
-              toastLength: Toast.LENGTH_LONG,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0);
-        }
-      }
-    });
   }
 }

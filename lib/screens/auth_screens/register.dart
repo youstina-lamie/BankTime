@@ -55,7 +55,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   Container(
                     decoration: const BoxDecoration(
-                        color: Color.fromRGBO(19, 140, 237, 1)),
+                        color: Color.fromRGBO(0, 80, 92, 1)),
                     child: InkWell(
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -125,10 +125,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     borderRadius: BorderRadius.circular(6),
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromRGBO(19, 140, 237, 1))),
+                                            Color.fromRGBO(12, 162, 185, 1))),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: Color.fromRGBO(19, 140, 237, 1)),
+                                      color: Color.fromRGBO(12, 162, 185, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Name',
@@ -175,10 +175,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     borderRadius: BorderRadius.circular(6),
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromRGBO(19, 140, 237, 1))),
+                                            Color.fromRGBO(12, 162, 185, 1))),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: Color.fromRGBO(19, 140, 237, 1)),
+                                      color: Color.fromRGBO(12, 162, 185, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Email',
@@ -232,10 +232,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     borderRadius: BorderRadius.circular(6),
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromRGBO(19, 140, 237, 1))),
+                                            Color.fromRGBO(12, 162, 185, 1))),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: Color.fromRGBO(19, 140, 237, 1)),
+                                      color: Color.fromRGBO(12, 162, 185, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Mobile No',
@@ -285,10 +285,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     borderRadius: BorderRadius.circular(6),
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromRGBO(19, 140, 237, 1))),
+                                            Color.fromRGBO(12, 162, 185, 1))),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: Color.fromRGBO(19, 140, 237, 1)),
+                                      color: Color.fromRGBO(12, 162, 185, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Address',
@@ -336,10 +336,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     borderRadius: BorderRadius.circular(6),
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromRGBO(19, 140, 237, 1))),
+                                            Color.fromRGBO(12, 162, 185, 1))),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: Color.fromRGBO(19, 140, 237, 1)),
+                                      color: Color.fromRGBO(12, 162, 185, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Password',
@@ -387,10 +387,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     borderRadius: BorderRadius.circular(6),
                                     borderSide: const BorderSide(
                                         color:
-                                            Color.fromRGBO(19, 140, 237, 1))),
+                                            Color.fromRGBO(12, 162, 185, 1))),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: Color.fromRGBO(19, 140, 237, 1)),
+                                      color: Color.fromRGBO(12, 162, 185, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Confirm Password',
@@ -432,7 +432,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               signUp();
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: const Color.fromRGBO(19, 140, 237, 1),
+                              backgroundColor:
+                                  const Color.fromRGBO(153, 206, 103, 1),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(28),
                               ),
@@ -454,7 +455,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     text: 'Login',
                                     style: TextStyle(
                                       fontSize: 14,
-                                      color: Color.fromRGBO(19, 140, 237, 1),
+                                      color: Color.fromRGBO(12, 162, 185, 1),
                                     ),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {

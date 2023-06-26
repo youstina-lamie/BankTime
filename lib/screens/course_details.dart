@@ -65,7 +65,7 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                 child: Column(children: [
             Container(
               decoration:
-                  const BoxDecoration(color: Color.fromRGBO(19, 140, 237, 1)),
+                  const BoxDecoration(color: Color.fromRGBO(255, 18, 101, 1)),
               child: InkWell(
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -103,7 +103,7 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
             ),
             Container(
                 width: MediaQuery.of(context).size.width,
-                color: Color.fromRGBO(19, 140, 237, 1),
+                color: Color.fromRGBO(255, 18, 101, 1),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
@@ -436,7 +436,7 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                               Container(
                                   width: MediaQuery.of(context).size.width,
                                   color: course.tips!.isEmpty
-                                      ? Color.fromRGBO(19, 140, 237, 1)
+                                      ? Color.fromRGBO(255, 18, 101, 1)
                                       : Color.fromRGBO(169, 58, 139, 1),
                                   child: Column(
                                     // ignore: prefer_const_literals_to_create_immutables
@@ -588,8 +588,9 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                                                             closIcon: true)));
                                           },
                                           style: ElevatedButton.styleFrom(
-                                            primary: const Color.fromRGBO(
-                                                19, 140, 237, 1),
+                                            backgroundColor:
+                                                const Color.fromRGBO(
+                                                    19, 140, 237, 1),
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(21),
@@ -654,8 +655,9 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                                                             closIcon: true)));
                                           },
                                           style: ElevatedButton.styleFrom(
-                                            primary: const Color.fromRGBO(
-                                                19, 140, 237, 1),
+                                            backgroundColor:
+                                                const Color.fromRGBO(
+                                                    19, 140, 237, 1),
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(21),
@@ -807,7 +809,7 @@ class _CourseDetailsScreenState extends State<CourseDetailsScreen> {
                                                         },
                                                         style: ElevatedButton
                                                             .styleFrom(
-                                                          primary:
+                                                          backgroundColor:
                                                               Color.fromRGBO(19,
                                                                   140, 237, 1),
                                                           shape:

@@ -7,12 +7,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:banktime/bottom_navbar.dart';
 import 'package:banktime/custom_page_route.dart';
 import 'package:banktime/my-globals.dart';
-import 'package:banktime/screens/questions_screens/first_question.dart';
 import 'package:banktime/screens/welcome_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Color.fromRGBO(19, 140, 237, 1)));
+      statusBarColor: Color.fromRGBO(0, 80, 92, 1)));
   runApp(const MyApp());
 }
 
@@ -54,7 +53,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late bool guest;
   late bool visited;
 
   @override
@@ -67,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: const Color.fromRGBO(19, 140, 248, 1),
+        color: const Color.fromRGBO(0,80,92,1),
         width: double.infinity,
         height: double.infinity,
         child: Column(
@@ -76,12 +74,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Column(
               children: [
-                Image.asset(
-                  "assets/images/logo-png-w-768x157@2x.png",
-                  height: 300.0,
-                  width: 300.0,
-                  color: Colors.white,
-                ),
+                const Text("Banktime",
+                            style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
               ],
             ),
           ],
@@ -92,20 +90,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   timer() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    guest = prefs.getBool('guest') == null ? true : prefs.getBool('guest')!;
     visited = prefs.getBool('visited') == null ? false : true;
 
     Timer(
-        const Duration(seconds: 2),
+        const Duration(seconds: 1),
         () async => Navigator.pushReplacement(
             context,
             CustomPageRoute(
-                child: visited
-                    ? (guest
-                        ? const WelcomeScreen(
-                            fromFirstQuestion: false,
-                          )
-                        : const Nav(pageIndex: 0))
-                    : const FirstQuestionScreen())));
+                child: visited ? const Nav(pageIndex: 0):const WelcomeScreen())));
   }
 }

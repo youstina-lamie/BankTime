@@ -50,7 +50,7 @@ class _ClickerIntroState extends State<ClickerIntro> {
                   child: Column(children: [
                     Container(
                       decoration: const BoxDecoration(
-                          color: Color.fromRGBO(19, 140, 237, 1)),
+                          color: Color.fromRGBO(255, 18, 101, 1)),
                       child: Padding(
                         padding: const EdgeInsets.only(
                             bottom: 20, top: 60, left: 20, right: 40),
@@ -210,7 +210,7 @@ class _ClickerIntroState extends State<ClickerIntro> {
                         width: 92,
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Color.fromRGBO(19, 140, 237, 1),
+                            color: Color.fromRGBO(255, 18, 101, 1),
                             image: DecorationImage(
                               image:
                                   AssetImage('assets/images/handPointer.png'),
@@ -222,7 +222,7 @@ class _ClickerIntroState extends State<ClickerIntro> {
                 bottomNavigationBar: Container(
                   height: 50,
                   decoration: const BoxDecoration(
-                    color: Color.fromRGBO(19, 140, 237, 1),
+                    color: Color.fromRGBO(255, 18, 101, 1),
                   ),
                   child: Container(),
                 ))),

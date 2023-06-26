@@ -34,59 +34,60 @@ class _TermAndConditionsScreenState extends State<TermAndConditionsScreen> {
         : Scaffold(
             backgroundColor: Colors.white,
             body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                      color: Color.fromRGBO(19, 140, 237, 1)),
-                  child: InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          bottom: 20, top: 60, left: 20, right: 40),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Icon(
-                            Icons.arrow_back_ios_new_outlined,
-                            color: Colors.black,
-                            size: 20,
-                          ),
-                          const Text(
-                            'Term And Conditions',
-                            style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Container()
-                        ],
-                      ),
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage('assets/images/Artboard – 1.png'))),
-                  child: Column(
-                    children: [
-                      Padding(
+              child: Column(
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Color.fromRGBO(255, 18, 101, 1)),
+                    child: InkWell(
+                      child: Padding(
                         padding: const EdgeInsets.only(
-                            left: 30, right: 30, bottom: 15, top: 15),
-                        child: Html(data: content),
+                            bottom: 20, top: 60, left: 20, right: 40),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.arrow_back_ios_new_outlined,
+                              color: Colors.black,
+                              size: 20,
+                            ),
+                            const Text(
+                              'Term And Conditions',
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Container()
+                          ],
+                        ),
                       ),
-                    ],
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
                   ),
-                )
-              ],
-            ),
-          ));
+                  Container(
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image:
+                                AssetImage('assets/images/Artboard – 1.png'))),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 30, right: 30, bottom: 15, top: 15),
+                          child: Html(data: content),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ));
   }
 
   getTermsAndConditions() async {
@@ -103,14 +104,13 @@ class _TermAndConditionsScreenState extends State<TermAndConditionsScreen> {
     } catch (e) {
       // print(e);
       Fluttertoast.showToast(
-        msg: "Something Wrong, Please Try Again.",
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0
-      );
+          msg: "Something Wrong, Please Try Again.",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
     }
   }
 }

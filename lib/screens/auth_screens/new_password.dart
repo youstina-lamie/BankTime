@@ -116,7 +116,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                         )));
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: const Color.fromRGBO(255, 202, 0, 1),
+                        backgroundColor: const Color.fromRGBO(255, 202, 0, 1),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),

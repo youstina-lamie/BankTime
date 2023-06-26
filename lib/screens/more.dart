@@ -34,7 +34,7 @@ class _MoreScreenState extends State<MoreScreen> {
             children: [
               Container(
                 decoration:
-                    const BoxDecoration(color: Color.fromRGBO(19, 140, 237, 1)),
+                    const BoxDecoration(color: Color.fromRGBO(255, 18, 101, 1)),
                 child: Padding(
                   padding: const EdgeInsets.only(
                       top: 60, bottom: 20, left: 20, right: 20),
@@ -319,7 +319,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                     height: 35,
                                     child: const Icon(
                                       FontAwesomeIcons.arrowRightFromBracket,
-                                      color: Color.fromRGBO(19, 140, 237, 1),
+                                      color: Color.fromRGBO(255, 18, 101, 1),
                                     ),
                                   ),
                                   const Expanded(
@@ -357,7 +357,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                     height: 35,
                                     child: const Icon(
                                       FontAwesomeIcons.arrowRightToBracket,
-                                      color: Color.fromRGBO(19, 140, 237, 1),
+                                      color: Color.fromRGBO(255, 18, 101, 1),
                                     ),
                                   ),
                                   const Expanded(
@@ -438,9 +438,7 @@ class _MoreScreenState extends State<MoreScreen> {
       prefs.remove('guest');
       Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
           CustomPageRoute(
-              child: const WelcomeScreen(
-            fromFirstQuestion: false,
-          )),
+              child: const WelcomeScreen()),
           (_) => false);
     }
   }

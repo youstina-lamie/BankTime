@@ -61,7 +61,7 @@ class _CoursesListingScreenState extends State<CoursesListingScreen> {
                         children: [
                           Container(
                             decoration: const BoxDecoration(
-                                color: Color.fromRGBO(19, 140, 237, 1)),
+                                color: Color.fromRGBO(255, 18, 101, 1)),
                             child: InkWell(
                               child: Padding(
                                 padding: const EdgeInsets.only(

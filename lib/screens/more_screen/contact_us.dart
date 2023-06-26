@@ -46,7 +46,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                   children: [
                     Container(
                       decoration: const BoxDecoration(
-                          color: Color.fromRGBO(19, 140, 237, 1)),
+                          color: Color.fromRGBO(255, 18, 101, 1)),
                       child: InkWell(
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -128,11 +128,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintStyle: const TextStyle(
@@ -191,11 +191,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintStyle: const TextStyle(
@@ -262,11 +262,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintStyle: const TextStyle(
@@ -319,11 +319,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintStyle: const TextStyle(
@@ -375,11 +375,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1))),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                        color: Color.fromRGBO(255, 18, 101, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintStyle: const TextStyle(
@@ -413,7 +413,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   sendMessage();
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.black,
+                                  backgroundColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(28),
                                   ),

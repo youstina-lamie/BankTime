@@ -29,7 +29,7 @@ class _CategoryListingScreenState extends State<CategoryListingScreen>
         children: [
           Container(
             decoration:
-                const BoxDecoration(color: Color.fromRGBO(19, 140, 237, 1)),
+                const BoxDecoration(color: Color.fromRGBO(255, 18, 101, 1)),
             child: Padding(
               padding: const EdgeInsets.only(
                   bottom: 20, top: 60, left: 20, right: 40),
@@ -62,7 +62,7 @@ class _CategoryListingScreenState extends State<CategoryListingScreen>
                 ),
               ),
               labelColor: Color.fromRGBO(9, 140, 237, 1),
-              unselectedLabelColor: Color.fromRGBO(19, 140, 237, 1),
+              unselectedLabelColor: Color.fromRGBO(255, 18, 101, 1),
               labelStyle: AppThemeData()
                   .testStyle18
                   .copyWith(color: AppThemeData().blueColor),

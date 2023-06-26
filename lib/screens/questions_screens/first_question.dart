@@ -56,7 +56,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                     children: [
                       Container(
                         decoration: const BoxDecoration(
-                            color: Color.fromRGBO(19, 140, 237, 1)),
+                            color: Color.fromRGBO(255, 18, 101, 1)),
                         child: Padding(
                           padding: const EdgeInsets.only(
                               bottom: 20, top: 60, left: 20, right: 40),
@@ -118,7 +118,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                 height: 120,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(60),
-                                  color: const Color.fromRGBO(19, 140, 237, 1),
+                                  color: const Color.fromRGBO(255, 18, 101, 1),
                                   image: const DecorationImage(
                                     fit: BoxFit.fill,
                                     image: AssetImage(
@@ -179,8 +179,8 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                                 19, 140, 237, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1)),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114)),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     hintStyle: const TextStyle(
@@ -224,7 +224,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                   dropdownColor: Colors.white,
                                   icon: const Icon(
                                     Icons.keyboard_arrow_down,
-                                    color: Color.fromRGBO(19, 140, 237, 1),
+                                    color: Color.fromRGBO(255, 18, 101, 1),
                                   ),
                                   onTap: () => FocusScope.of(context).unfocus(),
                                   style: const TextStyle(
@@ -250,8 +250,8 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                                 19, 140, 237, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1)),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114)),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     filled: true,
@@ -328,8 +328,8 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                                 19, 140, 237, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color:
-                                              Color.fromRGBO(19, 140, 237, 1)),
+                                          color: Color.fromRGBO(
+                                              255, 18, 101, 114)),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     hintText: 'Select Birth',
@@ -371,7 +371,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                 width: 245,
                                 height: 42,
                                 decoration: BoxDecoration(
-                                  color: const Color.fromRGBO(19, 140, 237, 1),
+                                  color: const Color.fromRGBO(255, 18, 101, 1),
                                   borderRadius: BorderRadius.circular(21),
                                 ),
                                 child: Row(
@@ -466,8 +466,8 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                     addDog();
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    primary:
-                                        const Color.fromRGBO(19, 140, 237, 1),
+                                    backgroundColor:
+                                        const Color.fromRGBO(255, 18, 101, 1),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(21),
                                     ),
@@ -543,9 +543,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
         prefs.setString('dogs', json.encode(dogsJson));
         setState(() => loading = false);
         Navigator.of(context).push(CustomPageRoute(
-            child: const WelcomeScreen(
-          fromFirstQuestion: true,
-        )));
+            child: const WelcomeScreen()));
       }
     } on SocketException {
       Navigator.of(context).pushAndRemoveUntil(

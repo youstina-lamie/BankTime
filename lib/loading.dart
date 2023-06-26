@@ -7,17 +7,14 @@ class Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       
         body: Container(
-          decoration: const BoxDecoration(
-            color: Colors.white
-          ),
-          child: const Center(
-            child: SpinKitWave(
-              color: Color.fromRGBO(19, 140, 237, 1),
-              size: 50.0,
-            ),
-          ),
-        ));
+      decoration: const BoxDecoration(color: Colors.white),
+      child: const Center(
+        child: SpinKitWave(
+          color: Color.fromRGBO(0, 80, 92, 1),
+          size: 50.0,
+        ),
+      ),
+    ));
   }
 }

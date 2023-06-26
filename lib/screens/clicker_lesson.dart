@@ -56,7 +56,7 @@ class _ClickerLessonState extends State<ClickerLesson> {
                 child: Column(children: [
             Container(
               decoration:
-                  const BoxDecoration(color: Color.fromRGBO(19, 140, 237, 1)),
+                  const BoxDecoration(color: Color.fromRGBO(255, 18, 101, 1)),
               child: Padding(
                 padding: const EdgeInsets.only(
                     top: 60, bottom: 20, left: 20, right: 20),
@@ -112,7 +112,7 @@ class _ClickerLessonState extends State<ClickerLesson> {
             ),
             Container(
                 width: MediaQuery.of(context).size.width,
-                color: Color.fromRGBO(19, 140, 237, 1),
+                color: Color.fromRGBO(255, 18, 101, 1),
                 child: Column(
                   children: <Widget>[
                     course.mainFileType != null && course.mainFile != null
@@ -160,7 +160,7 @@ class _ClickerLessonState extends State<ClickerLesson> {
                                 'Steps',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    color: Color.fromRGBO(19, 140, 237, 1),
+                                    color: Color.fromRGBO(255, 18, 101, 1),
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
