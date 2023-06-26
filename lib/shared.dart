@@ -3,10 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-
 class Shared {
   var context;
-  String baseurl = "https://whiskers.dev.wedev.sbs/api/";
+  String baseurl = "https://banktime.dev.wedev.sbs/api/";
 
   Shared(BuildContext c) {
     context = c;
@@ -26,15 +25,16 @@ class Shared {
     var res = await http.get(Uri.parse(baseurl + url));
     return res;
   }
+
   delete(url) async {
     var res = await http.delete(Uri.parse(baseurl + url));
     return res;
   }
 
   put(url, body) async {
-    var res = await http.put(Uri.parse(baseurl + url), body: body, headers: {
-      'Content-Type': 'application/json; charset=UTF-8'
-    });
+    var res = await http.put(Uri.parse(baseurl + url),
+        body: body,
+        headers: {'Content-Type': 'application/json; charset=UTF-8'});
     return res;
   }
 

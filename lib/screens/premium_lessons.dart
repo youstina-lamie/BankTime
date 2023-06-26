@@ -5,11 +5,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/loading.dart';
-import 'package:whiskers/model/courses_category.dart';
-import 'package:whiskers/screens/courses_listing.dart';
-import 'package:whiskers/widget/app_style.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/loading.dart';
+import 'package:banktime/model/courses_category.dart';
+import 'package:banktime/screens/courses_listing.dart';
+import 'package:banktime/widget/app_style.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import '../error_page.dart';
@@ -150,8 +150,9 @@ class _PremiumLessonsScreenState extends State<PremiumLessonsScreen> {
                                             .contains(searchString)
                                         ? InkWell(
                                             child: Padding(
-                                              padding: const EdgeInsets.symmetric(
-                                                  vertical: 7.5),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 7.5),
                                               child: SizedBox(
                                                 height: 140,
                                                 child: Stack(
@@ -159,15 +160,18 @@ class _PremiumLessonsScreenState extends State<PremiumLessonsScreen> {
                                                     Positioned.fill(
                                                       child: Container(
                                                         padding:
-                                                            const EdgeInsets.all(
-                                                                10.0),
-                                                        decoration: BoxDecoration(
+                                                            const EdgeInsets
+                                                                .all(10.0),
+                                                        decoration:
+                                                            BoxDecoration(
                                                           borderRadius:
                                                               const BorderRadius
                                                                       .all(
-                                                                  Radius.circular(
-                                                                      20)),
-                                                          image: DecorationImage(
+                                                                  Radius
+                                                                      .circular(
+                                                                          20)),
+                                                          image:
+                                                              DecorationImage(
                                                             image: NetworkImage(
                                                               category
                                                                   .imageFullPath,
@@ -180,16 +184,20 @@ class _PremiumLessonsScreenState extends State<PremiumLessonsScreen> {
                                                     Positioned.fill(
                                                       child: Container(
                                                         padding:
-                                                            const EdgeInsets.all(
-                                                                15.0),
+                                                            const EdgeInsets
+                                                                .all(15.0),
                                                         decoration: const BoxDecoration(
                                                             borderRadius:
-                                                                BorderRadius.all(
-                                                                    Radius
+                                                                BorderRadius
+                                                                    .all(Radius
                                                                         .circular(
                                                                             20)),
-                                                            color: Color.fromRGBO(
-                                                                0, 0, 0, .5)),
+                                                            color:
+                                                                Color.fromRGBO(
+                                                                    0,
+                                                                    0,
+                                                                    0,
+                                                                    .5)),
                                                         child: Column(
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
@@ -234,15 +242,16 @@ class _PremiumLessonsScreenState extends State<PremiumLessonsScreen> {
                                                         ? Positioned(
                                                             bottom: 20,
                                                             right: 10,
-                                                            child:
-                                                                Transform.rotate(
+                                                            child: Transform
+                                                                .rotate(
                                                               angle: -pi / 4,
-                                                              child: Text("NEW!",
+                                                              child: Text(
+                                                                  "NEW!",
                                                                   style: AppThemeData()
                                                                       .testStyle16Bold
                                                                       .copyWith(
-                                                                          color: Colors
-                                                                              .white)),
+                                                                          color:
+                                                                              Colors.white)),
                                                             ))
                                                         : Container(),
                                                   ],
@@ -253,9 +262,9 @@ class _PremiumLessonsScreenState extends State<PremiumLessonsScreen> {
                                               Navigator.of(context).push(
                                                 CustomPageRoute(
                                                     child: CoursesListingScreen(
-                                                        categoryId: category.id)),
+                                                        categoryId:
+                                                            category.id)),
                                               )
-
                                             },
                                           )
                                         : Container();
@@ -349,15 +358,14 @@ class _PremiumLessonsScreenState extends State<PremiumLessonsScreen> {
       return categories;
     } catch (e) {
       Fluttertoast.showToast(
-        msg: "Something Wrong, Please Try Again.",
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0
-      );
-     
+          msg: "Something Wrong, Please Try Again.",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
+
       return categories;
     }
   }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/screens/auth_screens/login.dart';
-import 'package:whiskers/screens/chat_with_us.dart';
-import 'package:whiskers/screens/clicker_lesson.dart';
-import 'package:whiskers/screens/more_screen/contact_us.dart';
-import 'package:whiskers/screens/more_screen/privacy_policy.dart';
-import 'package:whiskers/screens/more_screen/term_and_conditions.dart';
-import 'package:whiskers/screens/welcome_screen.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/screens/auth_screens/login.dart';
+import 'package:banktime/screens/chat_with_us.dart';
+import 'package:banktime/screens/clicker_lesson.dart';
+import 'package:banktime/screens/more_screen/contact_us.dart';
+import 'package:banktime/screens/more_screen/privacy_policy.dart';
+import 'package:banktime/screens/more_screen/term_and_conditions.dart';
+import 'package:banktime/screens/welcome_screen.dart';
 
 class MoreScreen extends StatefulWidget {
   const MoreScreen({Key? key}) : super(key: key);
@@ -36,7 +36,8 @@ class _MoreScreenState extends State<MoreScreen> {
                 decoration:
                     const BoxDecoration(color: Color.fromRGBO(19, 140, 237, 1)),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 60,bottom: 20,left: 20,right: 20),
+                  padding: const EdgeInsets.only(
+                      top: 60, bottom: 20, left: 20, right: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,8 +74,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height-130,
-
+                height: MediaQuery.of(context).size.height - 130,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.fill,
@@ -268,8 +268,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                     content: const Text(
                                       'Are you sure you want to logout ? ',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(height:1.5),
-
+                                      style: TextStyle(height: 1.5),
                                     ),
                                     actions: <Widget>[
                                       Row(
@@ -392,7 +391,7 @@ class _MoreScreenState extends State<MoreScreen> {
                             Container(
                                 margin: const EdgeInsets.only(bottom: 10),
                                 child: const Text(
-                                  'Get Whiskers Premium',
+                                  'Get banktime Premium',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
@@ -438,7 +437,11 @@ class _MoreScreenState extends State<MoreScreen> {
       prefs.remove('userId');
       prefs.remove('guest');
       Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
-          CustomPageRoute(child: const WelcomeScreen(fromFirstQuestion: false,)), (_) => false);
+          CustomPageRoute(
+              child: const WelcomeScreen(
+            fromFirstQuestion: false,
+          )),
+          (_) => false);
     }
   }
 }

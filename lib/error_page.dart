@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whiskers/bottom_navbar.dart';
+import 'package:banktime/bottom_navbar.dart';
 
 import 'custom_page_route.dart';
 
@@ -42,8 +42,12 @@ class ConnectionLostScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pushAndRemoveUntil(CustomPageRoute(child: const Nav(pageIndex: 0,)), (_) => false);
-       
+                    Navigator.of(context).pushAndRemoveUntil(
+                        CustomPageRoute(
+                            child: const Nav(
+                          pageIndex: 0,
+                        )),
+                        (_) => false);
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromRGBO(255, 202, 0, 1),

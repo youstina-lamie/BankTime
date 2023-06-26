@@ -1,8 +1,9 @@
 library globals;
+
 import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:video_player/video_player.dart';
-import 'package:whiskers/model/dog.dart';
+import 'package:banktime/model/dog.dart';
 
 Dog? currentDog;
 VideoPlayerController? controller;

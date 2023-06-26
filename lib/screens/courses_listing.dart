@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/error_page.dart';
-import 'package:whiskers/loading.dart';
-import 'package:whiskers/model/course.dart';
-import 'package:whiskers/model/courses_category.dart';
-import 'package:whiskers/screens/course_details.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/error_page.dart';
+import 'package:banktime/loading.dart';
+import 'package:banktime/model/course.dart';
+import 'package:banktime/model/courses_category.dart';
+import 'package:banktime/screens/course_details.dart';
 
 import '../shared.dart';
 
@@ -69,8 +69,7 @@ class _CoursesListingScreenState extends State<CoursesListingScreen> {
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   // ignore: prefer_const_literals_to_create_immutables
                                   children: [
                                     const Icon(
@@ -99,9 +98,9 @@ class _CoursesListingScreenState extends State<CoursesListingScreen> {
                           ),
                           count != 0
                               ? MediaQuery.removePadding(
-                                context: context,
-                                removeTop: true,
-                                child: ListView.builder(
+                                  context: context,
+                                  removeTop: true,
+                                  child: ListView.builder(
                                     physics:
                                         const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
@@ -172,15 +171,28 @@ class _CoursesListingScreenState extends State<CoursesListingScreen> {
                                                                         TextDecoration
                                                                             .none)),
                                                           ),
-                                                          category[0].courses![index].freePremium==1?
-                                                          SizedBox(
-                                                            height: 8,
-                                                          ) : Container(),
-                                                          category[0].courses![index].freePremium==1?Icon(
-                                                            Icons.lock_rounded,
-                                                            size: 22,
-                                                            color: Colors.white,
-                                                          ):Container()
+                                                          category[0]
+                                                                      .courses![
+                                                                          index]
+                                                                      .freePremium ==
+                                                                  1
+                                                              ? SizedBox(
+                                                                  height: 8,
+                                                                )
+                                                              : Container(),
+                                                          category[0]
+                                                                      .courses![
+                                                                          index]
+                                                                      .freePremium ==
+                                                                  1
+                                                              ? Icon(
+                                                                  Icons
+                                                                      .lock_rounded,
+                                                                  size: 22,
+                                                                  color: Colors
+                                                                      .white,
+                                                                )
+                                                              : Container()
                                                         ],
                                                       )),
                                                 ),
@@ -188,24 +200,23 @@ class _CoursesListingScreenState extends State<CoursesListingScreen> {
                                             ),
                                           ),
                                           onTap: () => {
-                                            Navigator.of(context).push(
-                                                CustomPageRoute(
+                                            Navigator.of(context)
+                                                .push(CustomPageRoute(
                                                     child: CourseDetailsScreen(
-                                                        course: category[0]
-                                                            .courses![index],
-                                                         )))
+                                              course:
+                                                  category[0].courses![index],
+                                            )))
                                           },
                                         ),
                                       );
                                     },
                                   ),
-                              )
+                                )
                               : SizedBox(
-                                  height: MediaQuery.of(context).size.height -
-                                      160,
+                                  height:
+                                      MediaQuery.of(context).size.height - 160,
                                   child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     // ignore: prefer_const_literals_to_create_immutables
                                     children: [
                                       Text(

@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:showcaseview/showcaseview.dart';
-import 'package:whiskers/bottom_navbar.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/widget/app_style.dart';
-import 'package:whiskers/widget/custom_button.dart';
+import 'package:banktime/bottom_navbar.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/widget/app_style.dart';
+import 'package:banktime/widget/custom_button.dart';
 
 class ClickerIntro extends StatefulWidget {
   const ClickerIntro({Key? key}) : super(key: key);
@@ -80,8 +80,7 @@ class _ClickerIntroState extends State<ClickerIntro> {
                           const Text(
                             'You Just Used A Clicker!',
                             style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 16, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(
@@ -156,8 +155,7 @@ class _ClickerIntroState extends State<ClickerIntro> {
                             title: 'Maybe Later',
                             titleStyle: AppThemeData()
                                 .testStyle18Bold
-                                .copyWith(
-                                    color: AppThemeData().whiteColor),
+                                .copyWith(color: AppThemeData().whiteColor),
                             buttonColor: AppThemeData().blackColor,
                           ),
                           const SizedBox(
@@ -196,8 +194,7 @@ class _ClickerIntroState extends State<ClickerIntro> {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
-                                image:
-                                    AssetImage('assets/images/arrow.png'),
+                                image: AssetImage('assets/images/arrow.png'),
                               ),
                             ),
                           ),
@@ -215,8 +212,8 @@ class _ClickerIntroState extends State<ClickerIntro> {
                             shape: BoxShape.circle,
                             color: Color.fromRGBO(19, 140, 237, 1),
                             image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/images/handPointer.png'),
+                              image:
+                                  AssetImage('assets/images/handPointer.png'),
                             )),
                       ),
                     )),
@@ -232,6 +229,7 @@ class _ClickerIntroState extends State<ClickerIntro> {
       ),
     );
   }
+
   turnVoice() async {
     await player.setAsset('assets/audio/clicker.mp3');
     player.play();

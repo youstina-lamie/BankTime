@@ -6,20 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
-import 'package:whiskers/my-globals.dart' as globals;
+import 'package:banktime/my-globals.dart' as globals;
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:whiskers/bottom_navbar.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/error_page.dart';
-import 'package:whiskers/loading.dart';
-import 'package:whiskers/model/breed.dart';
-import 'package:whiskers/model/dog.dart';
-import 'package:whiskers/model/gender.dart';
+import 'package:banktime/bottom_navbar.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/error_page.dart';
+import 'package:banktime/loading.dart';
+import 'package:banktime/model/breed.dart';
+import 'package:banktime/model/dog.dart';
+import 'package:banktime/model/gender.dart';
 import 'package:provider/provider.dart';
-
 
 import '../../shared.dart';
 
@@ -83,8 +82,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                           padding: const EdgeInsets.only(
                               bottom: 20, top: 60, left: 20, right: 40),
                           child: Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             // ignore: prefer_const_literals_to_create_immutables
                             children: [
@@ -109,17 +107,15 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                         },
                       ),
                     ),
-
                     Container(
                       width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage(
-                                'assets/images/Artboard – 1.png'))),
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage(
+                                  'assets/images/Artboard – 1.png'))),
                       child: Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 40),
+                        padding: const EdgeInsets.symmetric(horizontal: 40),
                         child: Column(
                           children: [
                             const SizedBox(
@@ -131,16 +127,14 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   width: 120,
                                   height: 120,
                                   decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(60),
-                                    color: const Color.fromRGBO(
-                                        19, 140, 237, 1),
+                                    borderRadius: BorderRadius.circular(60),
+                                    color:
+                                        const Color.fromRGBO(19, 140, 237, 1),
                                   ),
                                   child: image != null
                                       ? ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(
-                                                  90),
+                                              BorderRadius.circular(90),
                                           child: Image.file(
                                             image!,
                                             fit: BoxFit.cover,
@@ -148,8 +142,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                       : imageDog != ''
                                           ? ClipRRect(
                                               borderRadius:
-                                                  BorderRadius
-                                                      .circular(90),
+                                                  BorderRadius.circular(90),
                                               child: Image.network(
                                                 imageDog,
                                                 fit: BoxFit.cover,
@@ -174,8 +167,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                         size: 18,
                                       ),
                                       onTap: () {
-                                        pickImage(
-                                            ImageSource.gallery);
+                                        pickImage(ImageSource.gallery);
                                       },
                                     ),
                                   ),
@@ -191,8 +183,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                 'Change Photo',
                                 style: TextStyle(
                                     fontSize: 14,
-                                    color:
-                                        Color.fromRGBO(68, 68, 68, 1),
+                                    color: Color.fromRGBO(68, 68, 68, 1),
                                     fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -221,41 +212,33 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                 keyboardType: TextInputType.name,
                                 textAlign: TextAlign.left,
                                 style: const TextStyle(
-                                    color:
-                                        Color.fromRGBO(156, 156, 156, 1),
+                                    color: Color.fromRGBO(156, 156, 156, 1),
                                     fontSize: 14),
                                 decoration: InputDecoration(
                                   errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.red),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.red),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
-                                  contentPadding:
-                                      const EdgeInsets.symmetric(
-                                          vertical: 13, horizontal: 18),
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 13, horizontal: 18),
                                   enabledBorder: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1))),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(
-                                            19, 140, 237, 1)),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintStyle: const TextStyle(
-                                      color: Color.fromRGBO(
-                                          156, 156, 156, 1)),
+                                      color: Color.fromRGBO(156, 156, 156, 1)),
                                   hintText: 'Type Name',
                                   filled: true,
                                   fillColor: Colors.white,
@@ -297,53 +280,44 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   Icons.keyboard_arrow_down,
                                   color: Color.fromRGBO(19, 140, 237, 1),
                                 ),
-                                onTap: ()=>FocusScope.of(context).unfocus(),
+                                onTap: () => FocusScope.of(context).unfocus(),
                                 style: const TextStyle(
-                                    color:
-                                        Color.fromRGBO(156, 156, 156, 1),
+                                    color: Color.fromRGBO(156, 156, 156, 1),
                                     fontSize: 14),
                                 decoration: InputDecoration(
                                   errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.red),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.red),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
-                                  contentPadding:
-                                      const EdgeInsets.symmetric(
-                                          vertical: 13, horizontal: 18),
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 13, horizontal: 18),
                                   enabledBorder: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1))),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(
-                                            19, 140, 237, 1)),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintText: 'select breed',
                                   hintStyle: const TextStyle(
                                       fontSize: 14.0,
-                                      color: Color.fromRGBO(
-                                          156, 156, 156, 1)),
+                                      color: Color.fromRGBO(156, 156, 156, 1)),
                                   filled: true,
                                   fillColor: Colors.white,
                                 ),
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
-                                validator: (value) => value == null
-                                    ? 'Breed Required'
-                                    : null,
+                                validator: (value) =>
+                                    value == null ? 'Breed Required' : null,
                                 items: breedArr.map((Breed item) {
                                   return DropdownMenuItem(
                                     value: item,
@@ -384,43 +358,35 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                 readOnly: true,
                                 textAlign: TextAlign.left,
                                 style: const TextStyle(
-                                    color:
-                                        Color.fromRGBO(156, 156, 156, 1),
+                                    color: Color.fromRGBO(156, 156, 156, 1),
                                     fontSize: 14),
                                 decoration: InputDecoration(
                                   errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.red),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.red),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
-                                  contentPadding:
-                                      const EdgeInsets.symmetric(
-                                          vertical: 13, horizontal: 18),
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 13, horizontal: 18),
                                   enabledBorder: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(6),
                                       borderSide: const BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1))),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(
-                                            19, 140, 237, 1)),
-                                    borderRadius:
-                                        BorderRadius.circular(6),
+                                        color: Color.fromRGBO(19, 140, 237, 1)),
+                                    borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintText: 'Select Birth',
                                   hintStyle: const TextStyle(
                                       fontSize: 14.0,
-                                      color: Color.fromRGBO(
-                                          156, 156, 156, 1)),
+                                      color: Color.fromRGBO(156, 156, 156, 1)),
                                   filled: true,
                                   fillColor: Colors.white,
                                 ),
@@ -432,11 +398,9 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                       lastDate: DateTime.now());
                                   if (datePick != null) {
                                     setState(() {
-                                      birthDateInString =
-                                          datePick.toString();
+                                      birthDateInString = datePick.toString();
 
-                                      dateOfBirth.text =
-                                          birthDateInString;
+                                      dateOfBirth.text = birthDateInString;
                                     });
                                   }
                                 },
@@ -457,8 +421,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                               width: 245,
                               height: 42,
                               decoration: BoxDecoration(
-                                color:
-                                    const Color.fromRGBO(19, 140, 237, 1),
+                                color: const Color.fromRGBO(19, 140, 237, 1),
                                 borderRadius: BorderRadius.circular(21),
                               ),
                               child: Row(
@@ -478,21 +441,18 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                         vertical: 7.0,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: genderSelected ==
-                                                gendersArr[0]
+                                        color: genderSelected == gendersArr[0]
                                             ? const Color.fromRGBO(
                                                 255, 242, 0, 1)
                                             : const Color.fromRGBO(
                                                 19, 140, 237, 1),
-                                        borderRadius:
-                                            const BorderRadius.all(
-                                                Radius.circular(48.0)),
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(48.0)),
                                       ),
                                       child: Text(
                                         gendersArr[0].gender,
                                         style: TextStyle(
-                                          color: genderSelected ==
-                                                  gendersArr[0]
+                                          color: genderSelected == gendersArr[0]
                                               ? Colors.black
                                               : Colors.white,
                                           fontSize: 18,
@@ -515,23 +475,21 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                         vertical: 7.0,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: genderSelected ==
-                                                gendersArr[1]
+                                        color: genderSelected == gendersArr[1]
                                             ? const Color.fromRGBO(
                                                 255, 242, 0, 1)
                                             : const Color.fromRGBO(
                                                 19, 140, 237, 1),
-                                        borderRadius:
-                                            const BorderRadius.all(
-                                                Radius.circular(48.0)),
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(48.0)),
                                       ),
                                       child: Text(
                                         gendersArr[1].gender,
                                         style: TextStyle(
-                                            color: genderSelected ==
-                                                    gendersArr[1]
-                                                ? Colors.black
-                                                : Colors.white,
+                                            color:
+                                                genderSelected == gendersArr[1]
+                                                    ? Colors.black
+                                                    : Colors.white,
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.bold),
                                         textAlign: TextAlign.center,
@@ -557,11 +515,10 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                   updateDog();
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: const Color.fromRGBO(
-                                      19, 140, 237, 1),
+                                  primary:
+                                      const Color.fromRGBO(19, 140, 237, 1),
                                   shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(21),
+                                    borderRadius: BorderRadius.circular(21),
                                   ),
                                 ),
                               ),
@@ -574,8 +531,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                 'Remove Dog',
                                 style: TextStyle(
                                     fontSize: 14,
-                                    color:
-                                        Color.fromRGBO(19, 140, 237, 1)),
+                                    color: Color.fromRGBO(19, 140, 237, 1)),
                               ),
                               onTap: () {
                                 showDialog<String>(
@@ -593,29 +549,24 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                               MainAxisAlignment.center,
                                           children: <Widget>[
                                             Container(
-                                              margin:
-                                                  const EdgeInsets.only(
-                                                      right: 15),
+                                              margin: const EdgeInsets.only(
+                                                  right: 15),
                                               child: TextButton(
                                                 onPressed: () =>
                                                     {deleteDog(jsonDog)},
                                                 child: const Text(
                                                   'Yes',
                                                   style: TextStyle(
-                                                      color:
-                                                          Colors.white),
+                                                      color: Colors.white),
                                                 ),
-                                                style:
-                                                    TextButton.styleFrom(
-                                                  backgroundColor:
-                                                      Colors.red,
+                                                style: TextButton.styleFrom(
+                                                  backgroundColor: Colors.red,
                                                 ),
                                               ),
                                             ),
                                             TextButton(
                                               onPressed: () =>
-                                                  Navigator.of(context)
-                                                      .pop(),
+                                                  Navigator.of(context).pop(),
                                               child: const Text(
                                                 'No',
                                                 style: TextStyle(
@@ -633,7 +584,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
                                 );
                               },
                             ),
-                           SizedBox(height: 50)
+                            SizedBox(height: 50)
                           ],
                         ),
                       ),
@@ -773,7 +724,8 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
         loading = false;
         Navigator.of(context).pop();
         globals.currentDog = null;
-        Provider.of<globals.DogSelectedProvider>(context,listen: false).changeDogSelected(null);
+        Provider.of<globals.DogSelectedProvider>(context, listen: false)
+            .changeDogSelected(null);
         Navigator.of(context, rootNavigator: true)
             .pushReplacement(CustomPageRoute(
                 child: const Nav(
@@ -824,7 +776,7 @@ class _DogProfileEditScreenState extends State<DogProfileEditScreen> {
           editedDog.birthDate = birthDate.toString();
         }
         var uri =
-            Uri.parse('https://whiskers.dev.wedev.sbs/api/dogs/${dog.id}');
+            Uri.parse('https://banktime.dev.wedev.sbs/api/dogs/${dog.id}');
         var request = http.MultipartRequest('POST', uri);
         request.fields["name"] = name.text;
         request.fields["breed_id"] = (breedselected.id).toString();

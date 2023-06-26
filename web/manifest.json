@@ -1,6 +1,6 @@
 {
-    "name": "whiskers",
-    "short_name": "whiskers",
+    "name": "banktime",
+    "short_name": "banktime",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

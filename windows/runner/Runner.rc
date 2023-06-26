@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.whiskers" "\0"
-            VALUE "FileDescription", "whiskers" "\0"
+            VALUE "CompanyName", "com.banktime" "\0"
+            VALUE "FileDescription", "banktime" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "whiskers" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.whiskers. All rights reserved." "\0"
-            VALUE "OriginalFilename", "whiskers.exe" "\0"
-            VALUE "ProductName", "whiskers" "\0"
+            VALUE "InternalName", "banktime" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.banktime. All rights reserved." "\0"
+            VALUE "OriginalFilename", "banktime.exe" "\0"
+            VALUE "ProductName", "banktime" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

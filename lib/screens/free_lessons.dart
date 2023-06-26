@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/loading.dart';
-import 'package:whiskers/model/courses_category.dart';
-import 'package:whiskers/screens/courses_listing.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/loading.dart';
+import 'package:banktime/model/courses_category.dart';
+import 'package:banktime/screens/courses_listing.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../error_page.dart';
 import '../shared.dart';
@@ -151,8 +151,8 @@ class _FreeLessonsScreenState extends State<FreeLessonsScreen> {
                                         child: Container(
                                             padding: const EdgeInsets.all(15.0),
                                             decoration: const BoxDecoration(
-                                                color:
-                                                    Color.fromRGBO(0, 0, 0, .5)),
+                                                color: Color.fromRGBO(
+                                                    0, 0, 0, .5)),
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -220,15 +220,14 @@ class _FreeLessonsScreenState extends State<FreeLessonsScreen> {
       return categories;
     } catch (e) {
       Fluttertoast.showToast(
-        msg: "Something Wrong, Please Try Again.",
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0
-      );
-     
+          msg: "Something Wrong, Please Try Again.",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
+
       return categories;
     }
   }

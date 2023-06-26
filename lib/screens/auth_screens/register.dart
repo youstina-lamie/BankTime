@@ -8,11 +8,11 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/bottom_navbar.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/model/dog.dart';
-import 'package:whiskers/screens/auth_screens/login.dart';
-import 'package:whiskers/screens/questions_screens/clicker_intro.dart';
+import 'package:banktime/bottom_navbar.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/model/dog.dart';
+import 'package:banktime/screens/auth_screens/login.dart';
+import 'package:banktime/screens/questions_screens/clicker_intro.dart';
 
 import '../../loading.dart';
 import '../../shared.dart';
@@ -54,10 +54,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Column(
                 children: [
                   Container(
-                    decoration: const BoxDecoration(color: Color.fromRGBO(19, 140, 237, 1)),
+                    decoration: const BoxDecoration(
+                        color: Color.fromRGBO(19, 140, 237, 1)),
                     child: InkWell(
                       child: Padding(
-                        padding: const EdgeInsets.only(bottom: 20, top: 60, left: 20, right: 40),
+                        padding: const EdgeInsets.only(
+                            bottom: 20, top: 60, left: 20, right: 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,7 +72,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                             const Text(
                               'Sign Up',
-                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
                             Container()
                           ],
@@ -90,7 +95,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           height: 44,
                         ),
                         Text('Add your details to sign up',
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
                         SizedBox(
                           height: 37,
                         ),
@@ -100,30 +106,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: name,
                             keyboardType: TextInputType.name,
                             textAlign: TextAlign.left,
-                            style: TextStyle(color: Color.fromRGBO(156, 156, 156, 1), fontSize: 14),
+                            style: TextStyle(
+                                color: Color.fromRGBO(156, 156, 156, 1),
+                                fontSize: 14),
                             decoration: InputDecoration(
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.red),
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 27.0),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 12.0, horizontal: 27.0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(6),
-                                    borderSide: const BorderSide(color: Color.fromRGBO(19, 140, 237, 1))),
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromRGBO(19, 140, 237, 1))),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromRGBO(19, 140, 237, 1)),
+                                  borderSide: BorderSide(
+                                      color: Color.fromRGBO(19, 140, 237, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Name',
-                                hintStyle: TextStyle(color: Color.fromRGBO(156, 156, 156, 1)),
+                                hintStyle: TextStyle(
+                                    color: Color.fromRGBO(156, 156, 156, 1)),
                                 filled: true,
                                 fillColor: Colors.white,
                                 isDense: true),
-                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Name required';
@@ -141,30 +156,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: email,
                             keyboardType: TextInputType.emailAddress,
                             textAlign: TextAlign.left,
-                            style: TextStyle(color: Color.fromRGBO(156, 156, 156, 1), fontSize: 14),
+                            style: TextStyle(
+                                color: Color.fromRGBO(156, 156, 156, 1),
+                                fontSize: 14),
                             decoration: InputDecoration(
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.red),
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 27.0),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 12.0, horizontal: 27.0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(6),
-                                    borderSide: const BorderSide(color: Color.fromRGBO(19, 140, 237, 1))),
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromRGBO(19, 140, 237, 1))),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromRGBO(19, 140, 237, 1)),
+                                  borderSide: BorderSide(
+                                      color: Color.fromRGBO(19, 140, 237, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Email',
-                                hintStyle: TextStyle(color: Color.fromRGBO(156, 156, 156, 1)),
+                                hintStyle: TextStyle(
+                                    color: Color.fromRGBO(156, 156, 156, 1)),
                                 filled: true,
                                 fillColor: Colors.white,
                                 isDense: true),
-                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Email required';
@@ -189,30 +213,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ],
                             textAlign: TextAlign.left,
-                            style: TextStyle(color: Color.fromRGBO(156, 156, 156, 1), fontSize: 14),
+                            style: TextStyle(
+                                color: Color.fromRGBO(156, 156, 156, 1),
+                                fontSize: 14),
                             decoration: InputDecoration(
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.red),
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 27.0),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 12.0, horizontal: 27.0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(6),
-                                    borderSide: const BorderSide(color: Color.fromRGBO(19, 140, 237, 1))),
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromRGBO(19, 140, 237, 1))),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromRGBO(19, 140, 237, 1)),
+                                  borderSide: BorderSide(
+                                      color: Color.fromRGBO(19, 140, 237, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Mobile No',
-                                hintStyle: TextStyle(color: Color.fromRGBO(156, 156, 156, 1)),
+                                hintStyle: TextStyle(
+                                    color: Color.fromRGBO(156, 156, 156, 1)),
                                 filled: true,
                                 fillColor: Colors.white,
                                 isDense: true),
-                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               String pattern = r'^(?:[+0]6)?[0-9]{11}$';
                               RegExp regExp = RegExp(pattern);
@@ -233,30 +266,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: TextFormField(
                             controller: address,
                             textAlign: TextAlign.left,
-                            style: TextStyle(color: Color.fromRGBO(156, 156, 156, 1), fontSize: 14),
+                            style: TextStyle(
+                                color: Color.fromRGBO(156, 156, 156, 1),
+                                fontSize: 14),
                             decoration: InputDecoration(
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.red),
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 27.0),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 12.0, horizontal: 27.0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(6),
-                                    borderSide: const BorderSide(color: Color.fromRGBO(19, 140, 237, 1))),
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromRGBO(19, 140, 237, 1))),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromRGBO(19, 140, 237, 1)),
+                                  borderSide: BorderSide(
+                                      color: Color.fromRGBO(19, 140, 237, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Address',
-                                hintStyle: TextStyle(color: Color.fromRGBO(156, 156, 156, 1)),
+                                hintStyle: TextStyle(
+                                    color: Color.fromRGBO(156, 156, 156, 1)),
                                 filled: true,
                                 fillColor: Colors.white,
                                 isDense: true),
-                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Address required';
@@ -275,30 +317,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             keyboardType: TextInputType.visiblePassword,
                             obscureText: true,
                             textAlign: TextAlign.left,
-                            style: TextStyle(color: Color.fromRGBO(156, 156, 156, 1), fontSize: 14),
+                            style: TextStyle(
+                                color: Color.fromRGBO(156, 156, 156, 1),
+                                fontSize: 14),
                             decoration: InputDecoration(
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.red),
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 27.0),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 12.0, horizontal: 27.0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(6),
-                                    borderSide: const BorderSide(color: Color.fromRGBO(19, 140, 237, 1))),
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromRGBO(19, 140, 237, 1))),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromRGBO(19, 140, 237, 1)),
+                                  borderSide: BorderSide(
+                                      color: Color.fromRGBO(19, 140, 237, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Password',
-                                hintStyle: TextStyle(color: Color.fromRGBO(156, 156, 156, 1)),
+                                hintStyle: TextStyle(
+                                    color: Color.fromRGBO(156, 156, 156, 1)),
                                 filled: true,
                                 fillColor: Colors.white,
                                 isDense: true),
-                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Password required';
@@ -316,27 +367,35 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: confirmPassword,
                             obscureText: true,
                             textAlign: TextAlign.left,
-                            style: TextStyle(color: Color.fromRGBO(156, 156, 156, 1), fontSize: 14),
+                            style: TextStyle(
+                                color: Color.fromRGBO(156, 156, 156, 1),
+                                fontSize: 14),
                             decoration: InputDecoration(
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.red),
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 errorMaxLines: passwordNotMatch ? 2 : 1,
-                                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 27.0),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 12.0, horizontal: 27.0),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(6),
-                                    borderSide: const BorderSide(color: Color.fromRGBO(19, 140, 237, 1))),
+                                    borderSide: const BorderSide(
+                                        color:
+                                            Color.fromRGBO(19, 140, 237, 1))),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Color.fromRGBO(19, 140, 237, 1)),
+                                  borderSide: BorderSide(
+                                      color: Color.fromRGBO(19, 140, 237, 1)),
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 hintText: 'Confirm Password',
-                                hintStyle: TextStyle(color: Color.fromRGBO(156, 156, 156, 1)),
+                                hintStyle: TextStyle(
+                                    color: Color.fromRGBO(156, 156, 156, 1)),
                                 filled: true,
                                 fillColor: Colors.white,
                                 isDense: true),
@@ -365,7 +424,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           height: 56,
                           child: ElevatedButton(
                             child: const Text('Sign Up',
-                                style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold)),
                             onPressed: () {
                               signUp();
                             },
@@ -384,7 +446,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           // ignore: prefer_const_literals_to_create_immutables
                           children: [
-                            Text("Already have an Account?", style: TextStyle(fontSize: 14)),
+                            Text("Already have an Account?",
+                                style: TextStyle(fontSize: 14)),
                             RichText(
                               text: TextSpan(children: [
                                 TextSpan(
@@ -395,8 +458,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     ),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        Navigator.of(context, rootNavigator: true).pushReplacement(
-                                          CustomPageRoute(child: const LoginScreen()),
+                                        Navigator.of(context,
+                                                rootNavigator: true)
+                                            .pushReplacement(
+                                          CustomPageRoute(
+                                              child: const LoginScreen()),
                                         );
                                       }),
                               ]),
@@ -461,7 +527,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           } else {
             prefs.setBool('guest', false);
             prefs.setInt('userId', jsonResponse['user']['id']);
-            String dogs = prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
+            String dogs =
+                prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
             if (dogs != '') {
               var jsonDog = json.decode(dogs);
               Dog dog = Dog.fromJson(jsonDog[0]);
@@ -483,8 +550,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       pageIndex: 0,
                     )),
                     (_) => false)
-                : Navigator.of(context, rootNavigator: true)
-                    .pushAndRemoveUntil(CustomPageRoute(child: const ClickerIntro()), (_) => false);
+                : Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
+                    CustomPageRoute(child: const ClickerIntro()), (_) => false);
           }
         }
       }

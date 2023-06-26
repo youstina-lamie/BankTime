@@ -6,19 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/model/dog.dart';
-import 'package:whiskers/screens/auth_screens/login.dart';
-import 'package:whiskers/screens/auth_screens/register.dart';
-import 'package:whiskers/screens/questions_screens/clicker_intro.dart';
-import 'package:whiskers/widget/custom_button.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/model/dog.dart';
+import 'package:banktime/screens/auth_screens/login.dart';
+import 'package:banktime/screens/auth_screens/register.dart';
+import 'package:banktime/screens/questions_screens/clicker_intro.dart';
+import 'package:banktime/widget/custom_button.dart';
 
 import '../bottom_navbar.dart';
 import '../loading.dart';
 import '../shared.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  final bool fromFirstQuestion ;
+  final bool fromFirstQuestion;
   const WelcomeScreen({Key? key, required this.fromFirstQuestion})
       : super(key: key);
   @override
@@ -95,8 +95,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage(
-                                'assets/images/Artboard – 1.png'))),
+                            image:
+                                AssetImage('assets/images/Artboard – 1.png'))),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 34),
                       child: Column(
@@ -110,8 +110,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
-                                image:
-                                    AssetImage('assets/images/welcome.png'),
+                                image: AssetImage('assets/images/welcome.png'),
                               ),
                             ),
                           ),
@@ -159,8 +158,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                     Dog dog = Dog.fromJson(jsonDog[0]);
 
                                     Response responseAddDog =
-                                        await Shared(context)
-                                            .post("dogs/new", {
+                                        await Shared(context).post("dogs/new", {
                                       'name': dog.name,
                                       'breed': (dog.breed!.id).toString(),
                                       'gender': (dog.gender!.id).toString(),
@@ -179,9 +177,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                         pageIndex: 0,
                                       )),
                                       (_) => false)
-                                  : Navigator.of(context).push(
-                                      CustomPageRoute(
-                                          child: const ClickerIntro()));
+                                  : Navigator.of(context).push(CustomPageRoute(
+                                      child: const ClickerIntro()));
                             },
                             title: 'Continue As Guest',
                             titleStyle: const TextStyle(
@@ -195,8 +192,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                           CustomButton(
                             onTap: () {
-                              Navigator.of(context).push(CustomPageRoute(
-                                  child: const LoginScreen()));
+                              Navigator.of(context).push(
+                                  CustomPageRoute(child: const LoginScreen()));
                             },
                             title: 'Login',
                             titleStyle: const TextStyle(

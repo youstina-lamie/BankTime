@@ -1,4 +1,4 @@
-package com.whiskers.whiskers
+package com.banktime.banktime
 
 import io.flutter.embedding.android.FlutterActivity
 

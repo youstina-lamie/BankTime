@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/bottom_navbar.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/my-globals.dart';
-import 'package:whiskers/screens/questions_screens/first_question.dart';
-import 'package:whiskers/screens/welcome_screen.dart';
+import 'package:banktime/bottom_navbar.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/my-globals.dart';
+import 'package:banktime/screens/questions_screens/first_question.dart';
+import 'package:banktime/screens/welcome_screen.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Color.fromRGBO(19, 140, 237, 1)));
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Color.fromRGBO(19, 140, 237, 1)));
   runApp(const MyApp());
 }
 

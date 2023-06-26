@@ -12,14 +12,14 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
-import 'package:whiskers/custom_page_route.dart';
+import 'package:banktime/custom_page_route.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:sign_in_with_apple/sign_in_with_apple.dart';
-import 'package:whiskers/loading.dart';
-import 'package:whiskers/model/dog.dart';
-import 'package:whiskers/screens/auth_screens/register.dart';
-import 'package:whiskers/screens/auth_screens/reset_password.dart';
-import 'package:whiskers/screens/questions_screens/clicker_intro.dart';
+import 'package:banktime/loading.dart';
+import 'package:banktime/model/dog.dart';
+import 'package:banktime/screens/auth_screens/register.dart';
+import 'package:banktime/screens/auth_screens/reset_password.dart';
+import 'package:banktime/screens/questions_screens/clicker_intro.dart';
 //import 'package:google_sign_in/google_sign_in.dart';
 import '../../bottom_navbar.dart';
 import '../../shared.dart';
@@ -70,8 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             padding: const EdgeInsets.only(
                                 bottom: 20, top: 60, left: 20, right: 40),
                             child: Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
@@ -103,16 +102,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 image: AssetImage(
                                     'assets/images/Artboard – 1.png'))),
                         child: Padding(
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 40),
+                          padding: const EdgeInsets.symmetric(horizontal: 40),
                           child: Column(children: [
                             SizedBox(
                               height: 44,
                             ),
                             const Text('Add your details to login',
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold)),
+                                    fontSize: 16, fontWeight: FontWeight.bold)),
                             SizedBox(
                               height: 37,
                             ),
@@ -126,8 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     fontSize: 14),
                                 decoration: InputDecoration(
                                   errorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Colors.red),
+                                    borderSide: BorderSide(color: Colors.red),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
@@ -135,31 +131,27 @@ class _LoginScreenState extends State<LoginScreen> {
                                         const BorderSide(color: Colors.red),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
-                                  contentPadding:
-                                      const EdgeInsets.symmetric(
-                                          vertical: 12.0, horizontal: 27.0),
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 12.0, horizontal: 27.0),
                                   enabledBorder: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(6),
                                       borderSide: BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1))),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
-                                        color: Color.fromRGBO(
-                                            19, 140, 237, 1)),
+                                        color: Color.fromRGBO(19, 140, 237, 1)),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   hintText: 'Your Email',
                                   hintStyle: const TextStyle(
-                                      color:
-                                          Color.fromRGBO(156, 156, 156, 1)),
+                                      color: Color.fromRGBO(156, 156, 156, 1)),
                                   filled: true,
                                   fillColor: Colors.white,
                                   isDense: true,
                                 ),
                                 autovalidateMode:
-                                  AutovalidateMode.onUserInteraction,
+                                    AutovalidateMode.onUserInteraction,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return 'Email required';
@@ -185,43 +177,36 @@ class _LoginScreenState extends State<LoginScreen> {
                                     fontSize: 14),
                                 decoration: InputDecoration(
                                     errorBorder: OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                      borderSide: BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(6),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(6),
                                     ),
-                                    contentPadding:
-                                        const EdgeInsets.symmetric(
-                                            vertical: 12.0,
-                                            horizontal: 27.0),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: 12.0, horizontal: 27.0),
                                     enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(6),
+                                        borderRadius: BorderRadius.circular(6),
                                         borderSide: BorderSide(
                                             color: Color.fromRGBO(
                                                 19, 140, 237, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1)),
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1)),
+                                      borderRadius: BorderRadius.circular(6),
                                     ),
                                     hintText: 'Password',
                                     hintStyle: const TextStyle(
-                                        color: Color.fromRGBO(
-                                            156, 156, 156, 1)),
+                                        color:
+                                            Color.fromRGBO(156, 156, 156, 1)),
                                     filled: true,
                                     fillColor: Colors.white,
                                     isDense: true),
-                                    autovalidateMode:
-                                  AutovalidateMode.onUserInteraction,
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return 'Password required';
@@ -282,8 +267,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             const Text('or Login With',
                                 style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold)),
+                                    fontSize: 14, fontWeight: FontWeight.bold)),
                             SizedBox(
                               height: 29,
                             ),
@@ -349,19 +333,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                 : Container(),
                             Platform.isIOS
                                 ? Container(
-                                    width:
-                                        MediaQuery.of(context).size.width,
+                                    width: MediaQuery.of(context).size.width,
                                     height: 56,
                                     child: SignInWithAppleButton(
                                       onPressed: () async {
-                                        final credential =
-                                            await SignInWithApple
-                                                .getAppleIDCredential(
+                                        final credential = await SignInWithApple
+                                            .getAppleIDCredential(
                                           scopes: [
-                                            AppleIDAuthorizationScopes
-                                                .email,
-                                            AppleIDAuthorizationScopes
-                                                .fullName,
+                                            AppleIDAuthorizationScopes.email,
+                                            AppleIDAuthorizationScopes.fullName,
                                           ],
                                         ).then((credential) async {
                                           setState(() {
@@ -369,81 +349,84 @@ class _LoginScreenState extends State<LoginScreen> {
                                           });
                                           // var googleUser = _googleSignIn.currentUser;
                                           Response response =
-                                              await Shared(context)
-                                                  .postLogin(
-                                                      "users/social-login",
-                                                      jsonEncode({
-                                                        'email': credential
-                                                            .email,
-                                                        'name': credential
-                                                            .givenName,
-                                                        'provider_name':
-                                                            'Apple'
-                                                      }));
+                                              await Shared(context).postLogin(
+                                                  "users/social-login",
+                                                  jsonEncode({
+                                                    'email': credential.email,
+                                                    'name':
+                                                        credential.givenName,
+                                                    'provider_name': 'Apple'
+                                                  }));
                                           var jsonResponse =
                                               json.decode(response.body);
                                           if (response.statusCode == 200) {
-                                            if (jsonResponse['user'] !=
-                                                null) {
+                                            if (jsonResponse['user'] != null) {
                                               SharedPreferences prefs =
                                                   await SharedPreferences
                                                       .getInstance();
                                               prefs.setBool('guest', false);
-                                              prefs.setInt('userId', jsonResponse['user']['id']);
+                                              prefs.setInt('userId',
+                                                  jsonResponse['user']['id']);
 
-                                              dogs =prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
+                                              dogs = prefs.getString('dogs') ==
+                                                      null
+                                                  ? ''
+                                                  : prefs.getString('dogs')!;
 
                                               if (dogs != '') {
                                                 var jsonDog = json.decode(dogs);
-                                                Dog dog = Dog.fromJson(jsonDog[0]);
+                                                Dog dog =
+                                                    Dog.fromJson(jsonDog[0]);
 
-
-                                                Response responseAddDog = await Shared(context).post("dogs/new", {
+                                                Response responseAddDog =
+                                                    await Shared(context)
+                                                        .post("dogs/new", {
                                                   'name': dog.name,
-                                                  'breed': (dog.breed!.id).toString(),
-                                                  'gender': (dog.gender!.id).toString(),
-                                                  'date_of_birth': dog.birthDate.toString(),
-                                                  'user_id': (jsonResponse['user']['id']).toString()
+                                                  'breed': (dog.breed!.id)
+                                                      .toString(),
+                                                  'gender': (dog.gender!.id)
+                                                      .toString(),
+                                                  'date_of_birth':
+                                                      dog.birthDate.toString(),
+                                                  'user_id':
+                                                      (jsonResponse['user']
+                                                              ['id'])
+                                                          .toString()
                                                 });
                                                 prefs.remove('dogs');
-
                                               }
 
-                                              visited = prefs.getBool(
-                                                          'visited') ==
-                                                      null
-                                                  ? false
-                                                  : true;
+                                              visited =
+                                                  prefs.getBool('visited') ==
+                                                          null
+                                                      ? false
+                                                      : true;
                                               visited
                                                   ? Navigator.of(context)
                                                       .pushAndRemoveUntil(
                                                           CustomPageRoute(
-                                                              child:
-                                                                  const Nav(
+                                                              child: const Nav(
                                                             pageIndex: 0,
                                                           )),
                                                           (_) => false)
                                                   : Navigator.of(context,
-                                                          rootNavigator:
-                                                              true)
+                                                          rootNavigator: true)
                                                       .pushAndRemoveUntil(
                                                           CustomPageRoute(
                                                               child:
                                                                   const ClickerIntro()),
                                                           (_) => false);
                                             } else {
-                                              setState(
-                                                  () => loading = false);
-                                                  Fluttertoast.showToast(
-                                                    msg: jsonResponse['error'],
-                                                    toastLength: Toast.LENGTH_LONG,
-                                                    gravity: ToastGravity.BOTTOM,
-                                                    timeInSecForIosWeb: 1,
-                                                    backgroundColor: Colors.red,
-                                                    textColor: Colors.white,
-                                                    fontSize: 16.0
-                                                  );
-
+                                              setState(() => loading = false);
+                                              Fluttertoast.showToast(
+                                                  msg: jsonResponse['error'],
+                                                  toastLength:
+                                                      Toast.LENGTH_LONG,
+                                                  gravity: ToastGravity.BOTTOM,
+                                                  timeInSecForIosWeb: 1,
+                                                  backgroundColor: Colors.red,
+                                                  textColor: Colors.white,
+                                                  fontSize: 16.0);
                                             }
                                           } else {}
                                         });
@@ -470,17 +453,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                     TextSpan(
                                         text: 'Sign Up',
                                         style: const TextStyle(
-                                            color: Color.fromRGBO(
-                                                19, 140, 237, 1),
+                                            color:
+                                                Color.fromRGBO(19, 140, 237, 1),
                                             fontSize: 14),
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () {
                                             Navigator.of(context,
                                                     rootNavigator: true)
-                                                .pushReplacement(
-                                                    CustomPageRoute(
-                                                        child:
-                                                            const RegisterScreen()));
+                                                .pushReplacement(CustomPageRoute(
+                                                    child:
+                                                        const RegisterScreen()));
                                           }),
                                   ]),
                                 ),
@@ -512,12 +494,12 @@ class _LoginScreenState extends State<LoginScreen> {
           prefs.setBool('guest', false);
           prefs.setInt('userId', jsonResponse['user']['id']);
 
-          dogs =prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
+          dogs =
+              prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
 
           if (dogs != '') {
             var jsonDog = json.decode(dogs);
             Dog dog = Dog.fromJson(jsonDog[0]);
-           
 
             Response responseAddDog = await Shared(context).post("dogs/new", {
               'name': dog.name,
@@ -527,7 +509,6 @@ class _LoginScreenState extends State<LoginScreen> {
               'user_id': (jsonResponse['user']['id']).toString()
             });
             prefs.remove('dogs');
-
           }
 
           visited = prefs.getBool('visited') == null ? false : true;
@@ -542,29 +523,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomPageRoute(child: const ClickerIntro()), (_) => false);
         } else {
           Fluttertoast.showToast(
-            msg: "Invalid Email or Password.",
-            toastLength: Toast.LENGTH_LONG,
-            gravity: ToastGravity.BOTTOM,
-            timeInSecForIosWeb: 1,
-            backgroundColor: Colors.red,
-            textColor: Colors.white,
-            fontSize: 16.0
-          );
-         
+              msg: "Invalid Email or Password.",
+              toastLength: Toast.LENGTH_LONG,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.red,
+              textColor: Colors.white,
+              fontSize: 16.0);
+
           setState(() => loading = false);
         }
       }
     } catch (e) {
       Fluttertoast.showToast(
-        msg: "Invalid Email or Password",
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0
-      );
-      
+          msg: "Invalid Email or Password",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
     }
   }
 
@@ -599,14 +577,17 @@ class _LoginScreenState extends State<LoginScreen> {
           if (response.statusCode == 200) {
             if (jsonResponse['user'] != null) {
               SharedPreferences prefs = await SharedPreferences.getInstance();
-             
+
               prefs.setBool('guest', false);
               prefs.setInt('userId', jsonResponse['user']['id']);
-              dogs =prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
+              dogs = prefs.getString('dogs') == null
+                  ? ''
+                  : prefs.getString('dogs')!;
               if (dogs != '') {
                 var jsonDog = json.decode(dogs);
                 Dog dog = Dog.fromJson(jsonDog[0]);
-                Response responseAddDog = await Shared(context).post("dogs/new", {
+                Response responseAddDog =
+                    await Shared(context).post("dogs/new", {
                   'name': dog.name,
                   'breed': (dog.breed!.id).toString(),
                   'gender': (dog.gender!.id).toString(),
@@ -630,15 +611,13 @@ class _LoginScreenState extends State<LoginScreen> {
             } else {
               setState(() => loading = false);
               Fluttertoast.showToast(
-                msg: jsonResponse['error'],
-                toastLength: Toast.LENGTH_LONG,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.red,
-                textColor: Colors.white,
-                fontSize: 16.0
-              );
-             
+                  msg: jsonResponse['error'],
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0);
             }
           } else {}
 
@@ -680,7 +659,8 @@ class _LoginScreenState extends State<LoginScreen> {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           prefs.setBool('guest', false);
           prefs.setInt('userId', jsonResponse['user']['id']);
-          dogs =prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
+          dogs =
+              prefs.getString('dogs') == null ? '' : prefs.getString('dogs')!;
           if (dogs != '') {
             var jsonDog = json.decode(dogs);
             Dog dog = Dog.fromJson(jsonDog[0]);
@@ -693,7 +673,7 @@ class _LoginScreenState extends State<LoginScreen> {
             });
             prefs.remove('dogs');
           }
-          
+
           visited = prefs.getBool('visited') == null ? false : true;
           visited
               ? Navigator.of(context).pushAndRemoveUntil(
@@ -707,15 +687,13 @@ class _LoginScreenState extends State<LoginScreen> {
         } else {
           setState(() => loading = false);
           Fluttertoast.showToast(
-            msg: jsonResponse['error'],
-            toastLength: Toast.LENGTH_LONG,
-            gravity: ToastGravity.BOTTOM,
-            timeInSecForIosWeb: 1,
-            backgroundColor: Colors.red,
-            textColor: Colors.white,
-            fontSize: 16.0
-          );
-          
+              msg: jsonResponse['error'],
+              toastLength: Toast.LENGTH_LONG,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.red,
+              textColor: Colors.white,
+              fontSize: 16.0);
         }
       }
     });

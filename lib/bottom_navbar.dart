@@ -10,17 +10,17 @@ import 'package:http/http.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/error_page.dart';
-import 'package:whiskers/loading.dart';
-import 'package:whiskers/model/breed.dart';
-import 'package:whiskers/model/gender.dart';
-import 'package:whiskers/my-globals.dart' as globals;
-import 'package:whiskers/screens/category_listing.dart';
-import 'package:whiskers/screens/chat_with_us.dart';
-import 'package:whiskers/screens/clicker_lesson.dart';
-import 'package:whiskers/screens/dogs_profile.dart';
-import 'package:whiskers/screens/web_view_store.dart';
-import 'package:whiskers/shared.dart';
+import 'package:banktime/error_page.dart';
+import 'package:banktime/loading.dart';
+import 'package:banktime/model/breed.dart';
+import 'package:banktime/model/gender.dart';
+import 'package:banktime/my-globals.dart' as globals;
+import 'package:banktime/screens/category_listing.dart';
+import 'package:banktime/screens/chat_with_us.dart';
+import 'package:banktime/screens/clicker_lesson.dart';
+import 'package:banktime/screens/dogs_profile.dart';
+import 'package:banktime/screens/web_view_store.dart';
+import 'package:banktime/shared.dart';
 
 import 'custom_page_route.dart';
 import 'model/dog.dart';
@@ -35,11 +35,16 @@ class Nav extends StatefulWidget {
 }
 
 class _NavState extends State<Nav> {
-  final GlobalKey<NavigatorState> _homeNavigatorState = GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> _chatNavigatorState = GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> _profileNavigatorState = GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> _clickerLessonNavigatorState = GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> _storeNavigatorState = GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _homeNavigatorState =
+      GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _chatNavigatorState =
+      GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _profileNavigatorState =
+      GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _clickerLessonNavigatorState =
+      GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _storeNavigatorState =
+      GlobalKey<NavigatorState>();
 
   bool loading = false;
   int pageIndex = 0;
@@ -47,8 +52,12 @@ class _NavState extends State<Nav> {
   List<Dog> dogsListing = [];
   late AudioPlayer player;
   int dogsLength = 0;
-  Dog dogSelected =
-      Dog(id: -1, name: '', birthDate: '', breed: Breed(id: -1, breed: ''), gender: Gender(id: -1, gender: ''));
+  Dog dogSelected = Dog(
+      id: -1,
+      name: '',
+      birthDate: '',
+      breed: Breed(id: -1, breed: ''),
+      gender: Gender(id: -1, gender: ''));
 
   HomeTab currentTab = HomeTab.home;
 
@@ -127,7 +136,8 @@ class _NavState extends State<Nav> {
                 ),
               ),
             ),
-            floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
             bottomNavigationBar: buildMyNavBar(context),
           );
   }
@@ -148,7 +158,8 @@ class _NavState extends State<Nav> {
   }
 
   Container buildMyNavBar(BuildContext context) {
-    Dog? dogSelectedPro = Provider.of<globals.DogSelectedProvider>(context).dogSelectedProvider;
+    Dog? dogSelectedPro =
+        Provider.of<globals.DogSelectedProvider>(context).dogSelectedProvider;
 
     return Container(
       height: 50,
@@ -176,7 +187,8 @@ class _NavState extends State<Nav> {
                 pageIndex = 0;
                 currentTab = HomeTab.home;
                 checkVideoIsPlaying();
-                final navigatorState = _getNavigatorKey(currentTab).currentState;
+                final navigatorState =
+                    _getNavigatorKey(currentTab).currentState;
 
                 // pop to first route
                 if (navigatorState != null) {
@@ -203,7 +215,8 @@ class _NavState extends State<Nav> {
                 pageIndex = 1;
                 currentTab = HomeTab.chat;
                 checkVideoIsPlaying();
-                final navigatorState = _getNavigatorKey(currentTab).currentState;
+                final navigatorState =
+                    _getNavigatorKey(currentTab).currentState;
 
                 // pop to first route
                 if (navigatorState != null) {
@@ -231,7 +244,8 @@ class _NavState extends State<Nav> {
                 pageIndex = 2;
                 currentTab = HomeTab.store;
                 checkVideoIsPlaying();
-                final navigatorState = _getNavigatorKey(currentTab).currentState;
+                final navigatorState =
+                    _getNavigatorKey(currentTab).currentState;
 
                 // pop to first route
                 if (navigatorState != null) {
@@ -253,7 +267,8 @@ class _NavState extends State<Nav> {
                     pageIndex = 3;
                     currentTab = HomeTab.profile;
                     checkVideoIsPlaying();
-                    final navigatorState = _getNavigatorKey(currentTab).currentState;
+                    final navigatorState =
+                        _getNavigatorKey(currentTab).currentState;
 
                     // pop to first route
                     if (navigatorState != null) {
@@ -293,7 +308,8 @@ class _NavState extends State<Nav> {
   }
 
   void checkVideoIsPlaying() {
-    if (globals.chweiecontroller != null && globals.chweiecontroller!.isPlaying == true) {
+    if (globals.chweiecontroller != null &&
+        globals.chweiecontroller!.isPlaying == true) {
       globals.chweiecontroller!.pause();
       globals.chweiecontroller!.dispose();
       globals.controller!.dispose();
@@ -311,10 +327,12 @@ class _NavState extends State<Nav> {
 
       Response response = await Shared(context).get("dogs/for-user/$userId");
       var jsonData = jsonDecode(response.body);
-      dogsListing = (jsonData['Dogs'] as List).map((dog) => Dog.fromJson(dog)).toList();
+      dogsListing =
+          (jsonData['Dogs'] as List).map((dog) => Dog.fromJson(dog)).toList();
       dogsLength = dogsListing.length;
       if (dogsLength != 0) {
-        dogSelected = globals.currentDog != null ? globals.currentDog! : dogsListing[0];
+        dogSelected =
+            globals.currentDog != null ? globals.currentDog! : dogsListing[0];
       }
 
       setState(() {
@@ -323,7 +341,8 @@ class _NavState extends State<Nav> {
 
       return dogsListing;
     } on SocketException {
-      Navigator.of(context).pushAndRemoveUntil(CustomPageRoute(child: const ConnectionLostScreen()), (_) => false);
+      Navigator.of(context).pushAndRemoveUntil(
+          CustomPageRoute(child: const ConnectionLostScreen()), (_) => false);
       return dogsListing;
     } catch (e) {
       Fluttertoast.showToast(
@@ -343,7 +362,11 @@ class _NavState extends State<Nav> {
 enum HomeTab { home, chat, store, profile, clickerLesson }
 
 class _OffsetNavigator extends StatelessWidget {
-  const _OffsetNavigator({Key? key, required this.navigatorKey, required this.currentTab, required this.tab})
+  const _OffsetNavigator(
+      {Key? key,
+      required this.navigatorKey,
+      required this.currentTab,
+      required this.tab})
       : super(key: key);
 
   final GlobalKey<NavigatorState> navigatorKey;
@@ -421,15 +444,20 @@ abstract class TabNavigatorRouteFactory {
     return _routeFactory(_storeScreenBuilder);
   }
 
-  static Widget _homePageScreenBuilder(BuildContext context) => const CategoryListingScreen();
+  static Widget _homePageScreenBuilder(BuildContext context) =>
+      const CategoryListingScreen();
 
-  static Widget _chatScreenBuilder(BuildContext context) => const ChatWithUsScreen(closIcon: false);
+  static Widget _chatScreenBuilder(BuildContext context) =>
+      const ChatWithUsScreen(closIcon: false);
 
-  static Widget _profileScreenBuilder(BuildContext context) => const DogsProfileScreen();
+  static Widget _profileScreenBuilder(BuildContext context) =>
+      const DogsProfileScreen();
 
-  static Widget _storeScreenBuilder(BuildContext context) => const WebViewScreen();
+  static Widget _storeScreenBuilder(BuildContext context) =>
+      const WebViewScreen();
 
-  static Widget _clickerLessonScreenBuilder(BuildContext context) => const ClickerLesson(
+  static Widget _clickerLessonScreenBuilder(BuildContext context) =>
+      const ClickerLesson(
         fromIntro: true,
       );
 

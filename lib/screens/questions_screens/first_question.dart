@@ -5,12 +5,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:whiskers/custom_page_route.dart';
-import 'package:whiskers/loading.dart';
-import 'package:whiskers/model/breed.dart';
-import 'package:whiskers/model/dog.dart';
-import 'package:whiskers/model/gender.dart';
-import 'package:whiskers/screens/welcome_screen.dart';
+import 'package:banktime/custom_page_route.dart';
+import 'package:banktime/loading.dart';
+import 'package:banktime/model/breed.dart';
+import 'package:banktime/model/dog.dart';
+import 'package:banktime/model/gender.dart';
+import 'package:banktime/screens/welcome_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../../error_page.dart';
 import '../../shared.dart';
@@ -46,7 +46,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
             resizeToAvoidBottomInset: false,
             backgroundColor: Colors.white,
             body: GestureDetector(
-              onTap: ()=> FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: SingleChildScrollView(
                 keyboardDismissBehavior:
                     ScrollViewKeyboardDismissBehavior.onDrag,
@@ -107,8 +107,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                 image: AssetImage(
                                     'assets/images/Artboard – 1.png'))),
                         child: Padding(
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 40),
+                          padding: const EdgeInsets.symmetric(horizontal: 40),
                           child: Column(
                             children: [
                               const SizedBox(
@@ -119,8 +118,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                 height: 120,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(60),
-                                  color:
-                                      const Color.fromRGBO(19, 140, 237, 1),
+                                  color: const Color.fromRGBO(19, 140, 237, 1),
                                   image: const DecorationImage(
                                     fit: BoxFit.fill,
                                     image: AssetImage(
@@ -159,41 +157,35 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                   keyboardType: TextInputType.name,
                                   textAlign: TextAlign.left,
                                   style: const TextStyle(
-                                      color:
-                                          Color.fromRGBO(156, 156, 156, 1),
+                                      color: Color.fromRGBO(156, 156, 156, 1),
                                       fontSize: 14),
                                   decoration: InputDecoration(
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
-                                    contentPadding:
-                                        const EdgeInsets.symmetric(
-                                            horizontal: 18, vertical: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 18, vertical: 12),
                                     enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10),
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: const BorderSide(
                                             color: Color.fromRGBO(
                                                 19, 140, 237, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1)),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1)),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     hintStyle: const TextStyle(
-                                        color: Color.fromRGBO(
-                                            156, 156, 156, 1)),
+                                        color:
+                                            Color.fromRGBO(156, 156, 156, 1)),
                                     filled: true,
                                     fillColor: Colors.white,
                                   ),
@@ -234,54 +226,46 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                     Icons.keyboard_arrow_down,
                                     color: Color.fromRGBO(19, 140, 237, 1),
                                   ),
-                                  onTap: ()=>FocusScope.of(context).unfocus(),
-
+                                  onTap: () => FocusScope.of(context).unfocus(),
                                   style: const TextStyle(
-                                      color:
-                                          Color.fromRGBO(156, 156, 156, 1),
+                                      color: Color.fromRGBO(156, 156, 156, 1),
                                       fontSize: 14),
                                   decoration: InputDecoration(
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
-                                    contentPadding:
-                                        const EdgeInsets.symmetric(
-                                            horizontal: 18, vertical: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 18, vertical: 12),
                                     enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10),
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: const BorderSide(
                                             color: Color.fromRGBO(
                                                 19, 140, 237, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1)),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1)),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     filled: true,
                                     fillColor: Colors.white,
                                     hintText: 'Select Breed',
                                     hintStyle: const TextStyle(
                                         fontSize: 14.0,
-                                        color: Color.fromRGBO(
-                                            156, 156, 156, 1)),
+                                        color:
+                                            Color.fromRGBO(156, 156, 156, 1)),
                                   ),
                                   autovalidateMode:
                                       AutovalidateMode.onUserInteraction,
-                                  validator: (value) => value == null
-                                      ? 'Breed Required'
-                                      : null,
+                                  validator: (value) =>
+                                      value == null ? 'Breed Required' : null,
                                   items: breedArr.map((Breed item) {
                                     return DropdownMenuItem(
                                       value: item,
@@ -322,43 +306,37 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                   readOnly: true,
                                   textAlign: TextAlign.left,
                                   style: const TextStyle(
-                                      color:
-                                          Color.fromRGBO(156, 156, 156, 1),
+                                      color: Color.fromRGBO(156, 156, 156, 1),
                                       fontSize: 14),
                                   decoration: InputDecoration(
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.red),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
-                                    contentPadding:
-                                        const EdgeInsets.symmetric(
-                                            horizontal: 18, vertical: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 18, vertical: 12),
                                     enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10),
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: const BorderSide(
                                             color: Color.fromRGBO(
                                                 19, 140, 237, 1))),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color: Color.fromRGBO(
-                                              19, 140, 237, 1)),
-                                      borderRadius:
-                                          BorderRadius.circular(10),
+                                          color:
+                                              Color.fromRGBO(19, 140, 237, 1)),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     hintText: 'Select Birth',
                                     hintStyle: const TextStyle(
                                         fontSize: 14.0,
-                                        color: Color.fromRGBO(
-                                            156, 156, 156, 1)),
+                                        color:
+                                            Color.fromRGBO(156, 156, 156, 1)),
                                     filled: true,
                                     fillColor: Colors.white,
                                   ),
@@ -393,8 +371,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                 width: 245,
                                 height: 42,
                                 decoration: BoxDecoration(
-                                  color:
-                                      const Color.fromRGBO(19, 140, 237, 1),
+                                  color: const Color.fromRGBO(19, 140, 237, 1),
                                   borderRadius: BorderRadius.circular(21),
                                 ),
                                 child: Row(
@@ -414,23 +391,21 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                           vertical: 7.0,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: genderSelected ==
-                                                  gendersArr[0]
+                                          color: genderSelected == gendersArr[0]
                                               ? const Color.fromRGBO(
                                                   255, 242, 0, 1)
                                               : const Color.fromRGBO(
                                                   19, 140, 237, 1),
-                                          borderRadius:
-                                              const BorderRadius.all(
-                                                  Radius.circular(48.0)),
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(48.0)),
                                         ),
                                         child: Text(
                                           gendersArr[0].gender,
                                           style: TextStyle(
-                                            color: genderSelected ==
-                                                    gendersArr[0]
-                                                ? Colors.black
-                                                : Colors.white,
+                                            color:
+                                                genderSelected == gendersArr[0]
+                                                    ? Colors.black
+                                                    : Colors.white,
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -451,15 +426,13 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                           vertical: 7.0,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: genderSelected ==
-                                                  gendersArr[1]
+                                          color: genderSelected == gendersArr[1]
                                               ? const Color.fromRGBO(
                                                   255, 242, 0, 1)
                                               : const Color.fromRGBO(
                                                   19, 140, 237, 1),
-                                          borderRadius:
-                                              const BorderRadius.all(
-                                                  Radius.circular(48.0)),
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(48.0)),
                                         ),
                                         child: Text(
                                           gendersArr[1].gender,
@@ -493,11 +466,10 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
                                     addDog();
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    primary: const Color.fromRGBO(
-                                        19, 140, 237, 1),
+                                    primary:
+                                        const Color.fromRGBO(19, 140, 237, 1),
                                     shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(21),
+                                      borderRadius: BorderRadius.circular(21),
                                     ),
                                   ),
                                 ),
@@ -556,7 +528,7 @@ class _FirstQuestionScreenState extends State<FirstQuestionScreen> {
       if (addDogFormKey.currentState!.validate()) {
         setState(() => loading = true);
         SharedPreferences prefs = await SharedPreferences.getInstance();
-         // delete Dog
+        // delete Dog
         prefs.remove('dogs');
 
         Dog dog = Dog(

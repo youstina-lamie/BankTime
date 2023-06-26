@@ -1,5 +1,5 @@
-import 'package:whiskers/model/breed.dart';
-import 'package:whiskers/model/gender.dart';
+import 'package:banktime/model/breed.dart';
+import 'package:banktime/model/gender.dart';
 
 class Dog {
   int? id;
