@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="facebook_app_id">1202518490497487</string>
+    <string name="fb_login_protocol_scheme">fb1202518490497487</string>
+    <string name="facebook_client_token">b30dfcc5427253f9986087872f5f303a</string>
+    <string name="app_name">whiskers</string>
+
+
+</resources>

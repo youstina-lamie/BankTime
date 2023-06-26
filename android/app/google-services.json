@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "326974319660",
+    "project_id": "whiskers-ebe54",
+    "storage_bucket": "whiskers-ebe54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326974319660:android:547dd1ed70453bb858b589",
+        "android_client_info": {
+          "package_name": "com.whiskers.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326974319660-k6p35opeo1ft0udupeg5p5gm1vshtq09.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.whiskers.app",
+            "certificate_hash": "67a2d265741938c23bdc2f0448d06e331c621ff8"
+          }
+        },
+        {
+          "client_id": "326974319660-kpgph4ia962c8l4l2hcabn34gg6emoe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGPbzjjuhuEXZLlJgh5fqq2xxkIqeMkFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326974319660-kpgph4ia962c8l4l2hcabn34gg6emoe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
